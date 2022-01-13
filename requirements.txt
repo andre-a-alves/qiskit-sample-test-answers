@@ -1,0 +1,4 @@
+qiskit~=0.34.1
+matplotlib~=3.5.1
+jupyterlab~=3.2.6
+pylatexenc~=2.10
