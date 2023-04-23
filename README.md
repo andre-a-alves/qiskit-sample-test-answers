@@ -34,13 +34,9 @@ Run the following command to install the dependencies:
 Run the following command to open your JupyterLab:
 * `jupyter-lab`
 
-<hr>
-
 ## Contributing/Feedback
 If you feel you can improve any of the explanations contained in this JupyterLab, please feel free to make the change and open a pull request.
 Likewise, if you have any constructive feedback, please feel free to open an issue.
-
-<hr>
 
 ## License
 This JupyterLab is licensed under the [GNU GPL v.3.0](LICENSE). 
