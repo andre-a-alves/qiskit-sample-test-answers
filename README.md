@@ -1,3 +1,7 @@
+# Qiskit _Sample Test_ Answers
+![GitHub](https://img.shields.io/github/license/andre-a-alves/qiskit-sample-test-answers?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/andre-a-alves/qiskit-sample-test-answers?style=flat-square)
+
 This repository contains a [JupyterLab](https://jupyter.org) containing the following information for each of the questions provided by IBM in their sample test which can be downloaded [here](https://www.ibm.com/training/certification/C0010300):
 * The questions and potential answers
 * An explanation of the question
@@ -13,6 +17,10 @@ This repository is intended to facilitate studying for the certification exam.
 
 ## Getting Started
 To begin, download this repository onto your own system.
+There are several ways to do so, but the easiest will be via the command line with the following command: 
+```bash
+git clone git@github.com:andre-a-alves/qiskit-sample-test-answers.git
+```
 Next, I highly recommend setting up a virtual environment for this project.
 Instructions for how to do so with `venv` are available in [the Python documentation](https://docs.python.org/3/library/venv.html).
 
@@ -35,7 +43,7 @@ Likewise, if you have any constructive feedback, please feel free to open an iss
 <hr>
 
 ## License
-This JupyterLab is licensed under the GNU GPL v.3.0. 
+This JupyterLab is licensed under the [GNU GPL v.3.0](LICENSE). 
 
 ## Disclamer
-I am in no way affiliated with IBM or pearsonVue.
+This repository is my own work and is not endorsed by IBM or pearsonVue.
