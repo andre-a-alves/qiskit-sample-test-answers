@@ -1,4 +1,4 @@
-qiskit~=0.34.1
-matplotlib~=3.5.1
-jupyterlab~=3.2.6
+qiskit~=0.42.1
+matplotlib~=3.7.1
+jupyterlab~=3.6.3
 pylatexenc~=2.10
