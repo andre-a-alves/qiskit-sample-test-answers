@@ -13,7 +13,7 @@ This repository contains a [JupyterLab](https://jupyter.org) containing the foll
 In 2021, IBM began offering a certification for [IBM Certified Associate Developer - Quantum Computation using Qiskit v0.2X](https://www.ibm.com/training/certification/C0010300).
 This repository is intended to facilitate studying for the certification exam.
 
-<hr>
+There are eventual plans to convert these notebooks into a website hosted with GitHub pages.
 
 ## Getting Started
 To begin, download this repository onto your own system.
