@@ -4,12 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx eleventy --serve"
+    "watch:style": "stylus ./_src/stylus/ --compress --watch --out _src/static",
+    "build:style": "stylus _src/stylus/main.styl --compress",
+    "watch:11ty": "eleventy --serve",
+    "build:11ty": "eleventy",
+    "clean": "rm -r ./_site",
+    "build": "npm run build:style && npm run build:11ty",
+    "serve": "concurrently \"npm:watch:style\" \"npm:watch:11ty\""
   },
   "keywords": [],
   "author": "",
   "license": "GPL3",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "stylus": "^0.59.0",
+    "concurrently": "^8.0.1"
   }
 }

@@ -11,6 +11,8 @@ module.exports = function (eleventyConfig) {
     }
     eleventyConfig.addPassthroughCopy(questionFiles);
 
+    eleventyConfig.addPassthroughCopy("_src/static")
+
     return {
         markdownTemplateEngine: "njk",
         htmlTemplateEngine: "njk",
