@@ -78,27 +78,17 @@ bell.h(0)
 bell.x(1)
 bell.cx(0, 1)
 
-# Save the statevector for later
-bell.save_statevector()
-
 # Draw the code fragment
 bell.draw("mpl")
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    AttributeError                            Traceback (most recent call last)
-
-    Cell In [1], line 11
-          8 bell.cx(0, 1)
-         10 # Save the statevector for later
-    ---> 11 bell.save_statevector()
-         13 # Draw the code fragment
-         14 bell.draw('mpl')
 
 
-    AttributeError: 'QuantumCircuit' object has no attribute 'save_statevector'
+    
+![png](Question-05_files/Question-05_11_0.png)
+    
+
 
 
 Now that we see the circuit, we can examine the resulting statevector and see this is a Bell state.
@@ -106,9 +96,21 @@ Remember that the statevector will be represented as $\left[ |00angle, |01angl
 
 
 ```python
-simulation_result = Aer.get_backend("aer_simulator").run(assemble(bell)).result()
+simulation_result = Aer.get_backend("statevector_simulator").run(bell).result()
 array_to_latex(simulation_result.get_statevector(), prefix="\text{Statevector =}")
 ```
+
+
+
+
+$$
+	ext{Statevector =}
+egin{bmatrix}
+0 & rac{\sqrt{2}}{2} & rac{\sqrt{2}}{2} & 0  \
+ nd{bmatrix}
+$$
+
+
 
 So this confirms this circuit produces a Bell state with $|01angle$ and $|10angle$ as possible outputs.
 
@@ -118,6 +120,15 @@ We can go ahead and plot the results of a simulation as well to make it even cle
 ```python
 plot_histogram(simulation_result.get_counts(bell))
 ```
+
+
+
+
+    
+![png](Question-05_files/Question-05_15_0.png)
+    
+
+
 
 As you can see, answer A creates a Bell state.
 
@@ -146,21 +157,39 @@ bell.cx(0, 1)
 bell.h(0)
 bell.x(1)
 
-# Save the statevector for later
-bell.save_statevector()
-
 # Draw the code fragment
 bell.draw("mpl")
 ```
+
+
+
+
+    
+![png](Question-05_files/Question-05_19_0.png)
+    
+
+
 
 Now that we see the circuit, we can examine the resulting statevector and see this is a Bell state.
 Remember that the statevector will be represented as $\left[ |00angle, |01angle, |10angle, |11angle, ight]$.
 
 
 ```python
-simulation_result = Aer.get_backend("aer_simulator").run(assemble(bell)).result()
+simulation_result = Aer.get_backend("statevector_simulator").run(bell).result()
 array_to_latex(simulation_result.get_statevector(), prefix="\text{Statevector =}")
 ```
+
+
+
+
+$$
+	ext{Statevector =}
+egin{bmatrix}
+0 & 0 & rac{\sqrt{2}}{2} & rac{\sqrt{2}}{2}  \
+ nd{bmatrix}
+$$
+
+
 
 So this confirms this circuit produces a state with $|10angle$ and $|11angle$ as possible outputs.
 
@@ -170,6 +199,15 @@ We can go ahead and plot the results of a simulation as well to make it even cle
 ```python
 plot_histogram(simulation_result.get_counts(bell))
 ```
+
+
+
+
+    
+![png](Question-05_files/Question-05_23_0.png)
+    
+
+
 
 As you can see, answer B does not create a Bell state.
 
@@ -197,21 +235,39 @@ bell.h(0)
 bell.x(1)
 bell.cz(0, 1)
 
-# Save the statevector for later
-bell.save_statevector()
-
 # Draw the code fragment
 bell.draw("mpl")
 ```
+
+
+
+
+    
+![png](Question-05_files/Question-05_27_0.png)
+    
+
+
 
 Now that we see the circuit, we can examine the resulting statevector and see this is a Bell state.
 Remember that the statevector will be represented as $\left[ |00angle, |01angle, |10angle, |11angle, ight]$.
 
 
 ```python
-simulation_result = Aer.get_backend("aer_simulator").run(assemble(bell)).result()
+simulation_result = Aer.get_backend("statevector_simulator").run(bell).result()
 array_to_latex(simulation_result.get_statevector(), prefix="\text{Statevector =}")
 ```
+
+
+
+
+$$
+	ext{Statevector =}
+egin{bmatrix}
+0 & 0 & rac{\sqrt{2}}{2} & - rac{\sqrt{2}}{2}  \
+ nd{bmatrix}
+$$
+
+
 
 So this confirms this circuit produces a state with $|10angle$ and $|11angle$ as possible outputs.
 
@@ -221,6 +277,15 @@ We can go ahead and plot the results of a simulation as well to make it even cle
 ```python
 plot_histogram(simulation_result.get_counts(bell))
 ```
+
+
+
+
+    
+![png](Question-05_files/Question-05_31_0.png)
+    
+
+
 
 As you can see, answer C does not create a Bell state.
 
@@ -246,21 +311,39 @@ bell = QuantumCircuit(2)
 bell.h(0)
 bell.h(0)
 
-# Save the statevector for later
-bell.save_statevector()
-
 # Draw the code fragment
 bell.draw("mpl")
 ```
+
+
+
+
+    
+![png](Question-05_files/Question-05_35_0.png)
+    
+
+
 
 Now that we see the circuit, we can examine the resulting statevector and see this is a Bell state.
 Remember that the statevector will be represented as $\left[ |00angle, |01angle, |10angle, |11angle, ight]$.
 
 
 ```python
-simulation_result = Aer.get_backend("aer_simulator").run(assemble(bell)).result()
+simulation_result = Aer.get_backend("statevector_simulator").run(bell).result()
 array_to_latex(simulation_result.get_statevector(), prefix="\text{Statevector =}")
 ```
+
+
+
+
+$$
+	ext{Statevector =}
+egin{bmatrix}
+1 & 0 & 0 & 0  \
+ nd{bmatrix}
+$$
+
+
 
 So this confirms this circuit produces a state with $|00angle$ as the only possible output.
 
@@ -270,5 +353,14 @@ We can go ahead and plot the results of a simulation as well to make it even cle
 ```python
 plot_histogram(simulation_result.get_counts(bell))
 ```
+
+
+
+
+    
+![png](Question-05_files/Question-05_39_0.png)
+    
+
+
 
 As you can see, answer D does not create a Bell state.

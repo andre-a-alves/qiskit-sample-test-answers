@@ -238,7 +238,7 @@ statevector = result.get_statevector()
 print(statevector)
 ```
 
-    Statevector([0.+0.j, 1.+0.j, 0.+0.j, 0.+0.j],
+    Statevector([1.+0.j, 0.+0.j, 0.+0.j, 0.+0.j],
                 dims=(2, 2))
 
 

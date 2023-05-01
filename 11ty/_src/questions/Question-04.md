@@ -50,6 +50,15 @@ qc.measure([0, 1, 2], [0, 1, 2])
 qc.draw("mpl")
 ```
 
+
+
+
+    
+![png](Question-04_files/Question-04_11_0.png)
+    
+
+
+
 As you can see, answer A creates the correct circuit.
 
 ### Answer B
@@ -73,6 +82,9 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
+    Error: QuantumCircuit.measure() takes 3 positional arguments but 4 were given
+
+
 As you can see, answer B raises and error and cannot be run.
 
 ### Answer C
@@ -91,6 +103,15 @@ qc = QuantumCircuit(3, 3)
 qc.measure_all()
 qc.draw("mpl")
 ```
+
+
+
+
+    
+![png](Question-04_files/Question-04_19_0.png)
+    
+
+
 
 As you can see, answer C generates new classical bits, causing the circuit to be different from the circuit shown in the question.
 
@@ -114,5 +135,8 @@ try:
 except Exception as e:
     print(f"Error: {e}")
 ```
+
+    Error: QuantumCircuit.measure() takes 3 positional arguments but 4 were given
+
 
 As you can see, answer D raises and error and cannot be run.
