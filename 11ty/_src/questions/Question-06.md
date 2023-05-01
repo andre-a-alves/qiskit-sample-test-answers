@@ -14,7 +14,7 @@ layout: layouts/base.njk
     outputstate = result.get_statevector(qc)
     plot_bloch_multivector(outputstate)
     
-<img src="images/question-6.png" />
+<img alt="Bloch sphere" src="images/question-6.png" />
 
 ## Answer Options
 

@@ -10,7 +10,7 @@ layout: layouts/base.njk
     ancilla = QuantumRegister(1, name='anc')
     qc = QuantumCircuit(inp_reg, ancilla)
 
-<img src="./images/question-3.png" />
+<img alt="Quantum circuit" src="./images/question-3.png" />
 
 ## Answer Options
 

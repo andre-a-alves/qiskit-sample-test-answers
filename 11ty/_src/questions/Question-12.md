@@ -6,7 +6,7 @@ layout: layouts/base.njk
 
 #### What code fragment codes the equivalent circuit if you remove the barrier in the following QuantumCircuit?
 
-<img src="images/question-12.png" />
+<img alt="Quantum circuit" src="images/question-12.png" />
 
 ## Answer Options
 

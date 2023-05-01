@@ -6,7 +6,7 @@ layout: layouts/base.njk
 
 #### Given an empty `QuantumCircuit` object, `qc`, with three qubits and three classical bits, which one of these code fragments would create this circuit?
 
-<img src="images/question-4.png" />
+<img alt="Quantum circuit" src="images/question-4.png" />
 
 ## Answer Options
 
