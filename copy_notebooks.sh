@@ -2,7 +2,7 @@
 
 source ./.venv/bin/activate
 
-cp -r ./jupyter/images ./11ty/_src/questions/images
+cp -r ./jupyter/images ./11ty/_src/questions/
 
 for NOTEBOOK in ./jupyter/*.ipynb; do
 	NUMBER="${NOTEBOOK//[^0-9]/}"
@@ -10,7 +10,9 @@ for NOTEBOOK in ./jupyter/*.ipynb; do
 done
 
 for HTML in ./11ty/_src/questions/*.html; do
+  NEW_HTML=$(echo ${HTML} | tr '[:upper:]' '[:lower:]')
 	FULL_NUMBER="${HTML//[^0-9]/}"
 	NUMBER=`expr "${FULL_NUMBER: -2}" + 0`
-	echo -e "---\ntitle: Question ${NUMBER}\nlayout: layouts/base.njk\ntags: [question]\n---\n$(cat $HTML)" > $HTML
+	cat <(echo -e "---\ntitle: Question ${NUMBER}\nlayout: layouts/base.njk\ntags: [question]\n---\n") ${HTML} > ${NEW_HTML}
+	rm ${HTML}
 done
