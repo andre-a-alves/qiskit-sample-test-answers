@@ -1,6 +1,7 @@
 ---
 title: Question 11
 layout: layouts/base.njk
+tags: [question]
 ---
 # Question 11
 
