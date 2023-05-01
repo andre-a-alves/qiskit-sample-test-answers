@@ -6,7 +6,6 @@ module.exports = function (eleventyConfig) {
     const questionBase = "_src/questions"
     for (const n of Array(20).keys()) {
         const numStr = String(n).padStart(2, '0');
-        questionFiles[`${questionBase}/Question-${numStr}_files`] = `questions/Question-${numStr}/Question-${numStr}_files`;
         questionFiles[`${questionBase}/images/question-${n}.png`]= `questions/Question-${numStr}/images/question-${n}.png`;
     }
     eleventyConfig.addPassthroughCopy(questionFiles);
