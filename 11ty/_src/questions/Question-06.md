@@ -14,7 +14,7 @@ layout: layouts/base.njk
     outputstate = result.get_statevector(qc)
     plot_bloch_multivector(outputstate)
     
-![question-6.png](attachment:7bbc5cba-d187-469b-a6c8-5476a0e70f38.png)
+<img src="images/question-6.png" />
 
 ## Answer Options
 

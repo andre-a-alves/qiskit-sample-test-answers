@@ -2,6 +2,8 @@
 
 source ./.venv/bin/activate
 
+cp -r ./jupyter/images ./11ty/_src/questions/images
+
 for NOTEBOOK in ./jupyter/*.ipynb; do
 	NUMBER="${NOTEBOOK//[^0-9]/}"
 	jupyter nbconvert $NOTEBOOK --to markdown --output-dir ./11ty/_src/questions

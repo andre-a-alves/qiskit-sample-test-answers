@@ -10,7 +10,7 @@ layout: layouts/base.njk
     ancilla = QuantumRegister(1, name='anc')
     qc = QuantumCircuit(inp_reg, ancilla)
 
-![question-3.png](attachment:7d19a710-21d8-4676-bc03-590cf0b70aee.png)
+<img src="./images/question-3.png" />
 
 ## Answer Options
 
