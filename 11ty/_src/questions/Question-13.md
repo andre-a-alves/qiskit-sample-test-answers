@@ -1,3 +1,7 @@
+---
+title: Question 13
+layout: layouts/base.njk
+---
 # Question 13
 
 #### Given the following code, what is the depth of the circuit?

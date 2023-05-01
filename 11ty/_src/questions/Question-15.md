@@ -1,3 +1,7 @@
+---
+title: Question 15
+layout: layouts/base.njk
+---
 # Question 15
 
 #### Which of these would execute a circuit on a set of qubits which are coupled in a custom way?

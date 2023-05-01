@@ -1,3 +1,7 @@
+---
+title: Question 12
+layout: layouts/base.njk
+---
 # Question 12
 
 #### What code fragment codes the equivalent circuit if you remove the barrier in the following QuantumCircuit?
@@ -37,8 +41,8 @@
 
 This question tests your understanding of the definition of several gates and how they affect the qubit's state.
 In particular, for this question you need to know that the $T$ gate is equivalent to half of an $S$ gate.
-This is because the $T$ gate, sometimes also called a $\sqrt[4]{Z}$ gate, is equivalent to an $R_{Z}(\frac{\pi}{8})$ gate.
-Meanwhile, an $S$ gate, sometimes called a $\sqrt{Z}$ gate is equivalent to an $R_{Z}(\frac{\pi}{4})$ gate.
+This is because the $T$ gate, sometimes also called a $\sqrt[4]{Z}$ gate, is equivalent to an $R_{Z}(rac{\pi}{8})$ gate.
+Meanwhile, an $S$ gate, sometimes called a $\sqrt{Z}$ gate is equivalent to an $R_{Z}(rac{\pi}{4})$ gate.
 
 ## References
 
@@ -128,7 +132,7 @@ As you can see, the two circuits are functionally equivalent.
 `qc = QuantumCircuit(1,1)`  
 `qc.measure(0,0)`
 
-This creates a circuit that is still in the $|0\rangle$ state by applying no gates.
+This creates a circuit that is still in the $|0angle$ state by applying no gates.
 
 #### Let's take a closer look:
 

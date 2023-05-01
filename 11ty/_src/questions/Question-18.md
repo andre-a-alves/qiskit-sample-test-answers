@@ -1,3 +1,7 @@
+---
+title: Question 18
+layout: layouts/base.njk
+---
 # Question 18
 
 #### Which code fragment would yield an operator that represents a single-qubit $X$ gate?
@@ -25,7 +29,7 @@ The `Operator` Class represents a matrix operator that will evolve a statevector
 All gates can be represented by `Operator` objects, because gates each have matrix forms.
 
 The matrix form of the $X$ gate is
-$X = \begin{bmatrix} 0&1 \\\\ 1&0 \end{bmatrix}$
+$X = egin{bmatrix} 0&1 \\ 1&0 nd{bmatrix}$
 
 ## References
 
@@ -71,7 +75,7 @@ As you can see, answer A throws an error.
 `op = Operator([[0,1]])`
 
 While you can pass the matrix with which to intialize an operator, this code fragment only passes the top row of an $X$ gate as a parameter to the `Operator` constructor.
-To return an $X$ gate operator, the code fragment would have to pass `[[0,1],[1,0]]` to represent $\big[\begin{smallmatrix} 0&1 \\\\ 1&0 \end{smallmatrix}\big]$.
+To return an $X$ gate operator, the code fragment would have to pass `[[0,1],[1,0]]` to represent $ig[egin{smallmatrix} 0&1 \\ 1&0 nd{smallmatrix}ig]$.
 
 #### Let's take a closer look:
 
@@ -81,17 +85,17 @@ from qiskit.quantum_info import Operator
 from qiskit.visualization import array_to_latex
 
 op = Operator([[0, 1]])
-array_to_latex(op, prefix="\\text{Operator passed}: ")
+array_to_latex(op, prefix="\text{Operator passed}: ")
 ```
 
 
 
 
 $$
-\text{Operator passed}: 
-\begin{bmatrix}
-0 & 1  \\
- \end{bmatrix}
+	ext{Operator passed}: 
+egin{bmatrix}
+0 & 1  \
+ nd{bmatrix}
 $$
 
 
@@ -101,18 +105,18 @@ As you can see, answer B only passes the top half of the matrix for an $X$ gate.
 
 ```python
 op = Operator([[0, 1], [1, 0]])
-array_to_latex(op, prefix="\\text{Operator passed}: ")
+array_to_latex(op, prefix="\text{Operator passed}: ")
 ```
 
 
 
 
 $$
-\text{Operator passed}: 
-\begin{bmatrix}
-0 & 1  \\
- 1 & 0  \\
- \end{bmatrix}
+	ext{Operator passed}: 
+egin{bmatrix}
+0 & 1  \
+ 1 & 0  \
+ nd{bmatrix}
 $$
 
 
@@ -163,18 +167,18 @@ Since that is what we passed to the `Operator` constructor, that will be the ent
 
 
 ```python
-array_to_latex(op, prefix="\\text{Operator passed}: ")
+array_to_latex(op, prefix="\text{Operator passed}: ")
 ```
 
 
 
 
 $$
-\text{Operator passed}: 
-\begin{bmatrix}
-0 & 1  \\
- 1 & 0  \\
- \end{bmatrix}
+	ext{Operator passed}: 
+egin{bmatrix}
+0 & 1  \
+ 1 & 0  \
+ nd{bmatrix}
 $$
 
 
@@ -186,8 +190,8 @@ As you can see above, this produced an `Operator` that represents an $X$ gate.
 `op = Operator([[1,0,0,1]])`  
 
 While you can pass the matrix with which to intialize an operator, this code fragment passes the entire $X$ gate as a single row matrix as a parameter to the Operator constructor.
-To return an $X$ gate operator, the code fragment would have to pass `[[0,1],[1,0]]` to represent $\big[\begin{smallmatrix} 0&1 \\\\ 1&0 \end{smallmatrix}\big]$.
-As written, this fragment passes $\big[\begin{smallmatrix} 0&1&1&0 \end{smallmatrix}\big]$.
+To return an $X$ gate operator, the code fragment would have to pass `[[0,1],[1,0]]` to represent $ig[egin{smallmatrix} 0&1 \\ 1&0 nd{smallmatrix}ig]$.
+As written, this fragment passes $ig[egin{smallmatrix} 0&1&1&0 nd{smallmatrix}ig]$.
 
 #### Let's take a closer look:
 
@@ -196,17 +200,17 @@ As written, this fragment passes $\big[\begin{smallmatrix} 0&1&1&0 \end{smallmat
 from qiskit.quantum_info import Operator
 
 op = Operator([[1, 0, 0, 1]])
-array_to_latex(op, prefix="\\text{Operator passed}: ")
+array_to_latex(op, prefix="\text{Operator passed}: ")
 ```
 
 
 
 
 $$
-\text{Operator passed}: 
-\begin{bmatrix}
-1 & 0 & 0 & 1  \\
- \end{bmatrix}
+	ext{Operator passed}: 
+egin{bmatrix}
+1 & 0 & 0 & 1  \
+ nd{bmatrix}
 $$
 
 
@@ -216,18 +220,18 @@ As you can see, answer D passes a 1x4 matrix instead of a 2x2 matrix.
 
 ```python
 op = Operator([[0, 1], [1, 0]])
-array_to_latex(op, prefix="\\text{Operator passed}: ")
+array_to_latex(op, prefix="\text{Operator passed}: ")
 ```
 
 
 
 
 $$
-\text{Operator passed}: 
-\begin{bmatrix}
-0 & 1  \\
- 1 & 0  \\
- \end{bmatrix}
+	ext{Operator passed}: 
+egin{bmatrix}
+0 & 1  \
+ 1 & 0  \
+ nd{bmatrix}
 $$
 
 

@@ -1,3 +1,7 @@
+---
+title: Question 8
+layout: layouts/base.njk
+---
 # Question 8
 
 #### Which two code fragments, when inserted into the code below, will produce the statevector shown in the output?
@@ -40,12 +44,12 @@
 
 ## Question Explanation
 
-It is important to understand Qiskit will output a statevector representation of a two-qubit circuit $\left[\frac{1}{\sqrt{2}} \quad 0 \quad 0 \quad \frac{1}{\sqrt{2}}\right]$ is in the following order: 00, 01, 10, 11.
-Therefore, the statevector shown in the output is $\frac{1}{\sqrt{2}}\left(|00\rangle+|11\rangle\right)$.
+It is important to understand Qiskit will output a statevector representation of a two-qubit circuit $\left[rac{1}{\sqrt{2}} \quad 0 \quad 0 \quad rac{1}{\sqrt{2}}ight]$ is in the following order: 00, 01, 10, 11.
+Therefore, the statevector shown in the output is $rac{1}{\sqrt{2}}\left(|00angle+|11angleight)$.
 
 It is also important to understand `QuantumCurcuit.initialize()` will act upon the qubit passed to it as a parameter.
 `initialize()` takes one parameter that is a specific statevector and another that gives the qubit to be placed into that state.
-`initialize()` will first return that qubit to a $|0\rangle$ state and then place it into the declared state.
+`initialize()` will first return that qubit to a $|0angle$ state and then place it into the declared state.
 
 Finally, it is important to remember that once a measurement is taken, the quantum state has a defined value.
 Therefore, after measurement, the statevector will always have a probability of 1 for a specific state.
@@ -106,7 +110,7 @@ As you can see, answer A produces the desired statevector.
     qc.h(0)  
     qc.cx(0,1)  
 
-This well-known circuit pattern creates the Bell state of $\frac{1}{\sqrt{2}}\left(|00\rangle+|11\rangle\right)$.
+This well-known circuit pattern creates the Bell state of $rac{1}{\sqrt{2}}\left(|00angle+|11angleight)$.
 
 #### Let's take a closer look:
 
@@ -140,7 +144,7 @@ As you can see, answer B produces the desired statevector.
     qc.initialize(v1,0)  
     qc.initialize(v2,1)
 
-This code fragment places the circuit into the constant state of $|10\rangle$ by initiailizeing the first qubit as 0 and the second qubit as 1.
+This code fragment places the circuit into the constant state of $|10angle$ by initiailizeing the first qubit as 0 and the second qubit as 1.
 
 #### Let's take a closer look:
 
@@ -166,7 +170,7 @@ print(statevector)
                 dims=(2, 2))
 
 
-As you can see, the output statevector is $\left[ 0 \quad 0 \quad 1 \quad 0 \right]$.
+As you can see, the output statevector is $\left[ 0 \quad 0 \quad 1 \quad 0 ight]$.
 
 ### Answer D
 
@@ -174,7 +178,7 @@ As you can see, the output statevector is $\left[ 0 \quad 0 \quad 1 \quad 0 \rig
     qc.measure_all()  
 
 The initial $CX$ gate does not do anything, since the control bit remains in the 0 state.
-Therefore, this code fragment remains in the $|00\rangle$ state.
+Therefore, this code fragment remains in the $|00angle$ state.
 
 Without considering the $CX$ gate, the `measure_all()` method collapses the statevector into a measured state with a probability of 1.
 This does nothing to this specific circuit, because it already had a probability of 1.
@@ -202,7 +206,7 @@ print(statevector)
                 dims=(2, 2))
 
 
-As you can see, the output statevector is $\left[ 1 \quad 0 \quad 0 \quad 0 \right]$.
+As you can see, the output statevector is $\left[ 1 \quad 0 \quad 0 \quad 0 ight]$.
 
 ### Answer E
 
@@ -210,7 +214,7 @@ As you can see, the output statevector is $\left[ 1 \quad 0 \quad 0 \quad 0 \rig
     qc.h(1)  
     qc.measure_all() 
 
-This circuit is initially put into a state where every possibility is equally probably, or $\frac{1}{2} \left(|00\rangle + |01\rangle + |10\rangle + |11\rangle \right)$ which has a statevector of $\left[ \frac{1}{2} \quad \frac{1}{2} \quad \frac{1}{2} \quad \frac{1}{2} \right]$.
+This circuit is initially put into a state where every possibility is equally probably, or $rac{1}{2} \left(|00angle + |01angle + |10angle + |11angle ight)$ which has a statevector of $\left[ rac{1}{2} \quad rac{1}{2} \quad rac{1}{2} \quad rac{1}{2} ight]$.
 However, measuring the qubits collapses the state, so the statevector would always be `1.+0.j` for one possible and `0.+0.j` for all the others.
 
 #### Let's take a closer look:

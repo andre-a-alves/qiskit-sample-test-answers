@@ -1,3 +1,7 @@
+---
+title: Question 19
+layout: layouts/base.njk
+---
 # Question 19
 
 #### What would be the fidelity result(s) for these two operators, which differ only by global phase?
@@ -57,10 +61,10 @@ array_to_latex(op_a, prefix="op_a: ")
 
 $$
 op_a: 
-\begin{bmatrix}
-0 & 1  \\
- 1 & 0  \\
- \end{bmatrix}
+egin{bmatrix}
+0 & 1  \
+ 1 & 0  \
+ nd{bmatrix}
 $$
 
 
@@ -77,10 +81,10 @@ array_to_latex(op_b, prefix="op_b: ")
 
 $$
 op_b: 
-\begin{bmatrix}
-0 & 0.8775825619 + 0.4794255386 i  \\
- 0.8775825619 + 0.4794255386 i & 0  \\
- \end{bmatrix}
+egin{bmatrix}
+0 & 0.8775825619 + 0.4794255386 i  \
+ 0.8775825619 + 0.4794255386 i & 0  \
+ nd{bmatrix}
 $$
 
 
@@ -142,17 +146,17 @@ Then we can look at the state of the first circuit.
 
 
 ```python
-array_to_latex(state_a, prefix="|\Psi_{a}\\rangle = ")
+array_to_latex(state_a, prefix="|\Psi_{a}\rangle = ")
 ```
 
 
 
 
 $$
-|\Psi_{a}\rangle = 
-\begin{bmatrix}
-0 & 1  \\
- \end{bmatrix}
+|\Psi_{a}angle = 
+egin{bmatrix}
+0 & 1  \
+ nd{bmatrix}
 $$
 
 
@@ -161,17 +165,17 @@ And we can look at the state of the second circuit.
 
 
 ```python
-array_to_latex(state_b, prefix="|\Psi_{b}\\rangle = ")
+array_to_latex(state_b, prefix="|\Psi_{b}\rangle = ")
 ```
 
 
 
 
 $$
-|\Psi_{b}\rangle = 
-\begin{bmatrix}
-0 & 0.8775825619 + 0.4794255386 i  \\
- \end{bmatrix}
+|\Psi_{b}angle = 
+egin{bmatrix}
+0 & 0.8775825619 + 0.4794255386 i  \
+ nd{bmatrix}
 $$
 
 

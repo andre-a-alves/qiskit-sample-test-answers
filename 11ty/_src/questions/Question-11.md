@@ -1,3 +1,7 @@
+---
+title: Question 11
+layout: layouts/base.njk
+---
 # Question 11
 
 #### Which two options would place a barrier across all qubits to the QuantumCircuit below?

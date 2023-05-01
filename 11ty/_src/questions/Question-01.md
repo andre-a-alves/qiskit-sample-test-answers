@@ -1,3 +1,7 @@
+---
+title: Question 1
+layout: layouts/base.njk
+---
 # Question 1
 
 #### Which statement will create a quantum circuit with four quantum bits and four classical bits?

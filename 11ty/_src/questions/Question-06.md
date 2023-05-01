@@ -1,3 +1,7 @@
+---
+title: Question 6
+layout: layouts/base.njk
+---
 # Question 6
 
 #### Given this code, which two inserted code fragments result in the state vector represented by this Bloch sphere?
@@ -30,8 +34,8 @@
 
 This question tests whether on understands the basic gates and the Bloch sphere.
 
-The Hadamard gate performs a rotation of $\pi$ around the $\frac{\hat{x} + \hat{z}}{\sqrt{2}}$ axis.
-So from the $|0\rangle$ state, the $H$ gate is equivalent to an $R_{Y}(\frac{\pi}{2})$ gate.
+The Hadamard gate performs a rotation of $\pi$ around the $rac{\hat{x} + \hat{z}}{\sqrt{2}}$ axis.
+So from the $|0angle$ state, the $H$ gate is equivalent to an $R_{Y}(rac{\pi}{2})$ gate.
 Remember an $R_{\gamma}$ gate will rotate the Bloch vector around the $\gamma$ axis.
 
 ## References
@@ -51,7 +55,7 @@ Remember an $R_{\gamma}$ gate will rotate the Bloch vector around the $\gamma$ a
 
 `qc.h(0)`
 
-The $H$ gate rotates the Bloch vector halfway from $|0\rangle$ to $|1\rangle$ around the y axis.
+The $H$ gate rotates the Bloch vector halfway from $|0angle$ to $|1angle$ around the y axis.
 
 #### Let's take a closer look:
 
@@ -124,7 +128,7 @@ As you can see, answer B rotates the Bloch vector around the wrong axis.
 
 `qc.ry(math.pi / 2, 0)`
 
-From $|0\rangle$, an $R_{Y}\left(\frac{\pi}{2}\right)$ gate is equivalent to an $H$ gate and rotates the Bloch vector halfway from $|0\rangle$ to $|1\rangle$ around the y axis.
+From $|0angle$, an $R_{Y}\left(rac{\pi}{2}ight)$ gate is equivalent to an $H$ gate and rotates the Bloch vector halfway from $|0angle$ to $|1angle$ around the y axis.
 
 #### Let's take a closer look:
 
@@ -201,7 +205,7 @@ As you can see, these two rotations move the Bloch vector in the opposite direct
 
 `qc.ry(math.pi, 0)`
 
-This would rotate the Bloch vector all the way to $|1\rangle$.
+This would rotate the Bloch vector all the way to $|1angle$.
 
 #### Let's take a closer look:
 

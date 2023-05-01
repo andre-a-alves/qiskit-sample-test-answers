@@ -1,3 +1,7 @@
+---
+title: Question 16
+layout: layouts/base.njk
+---
 # Question 16
 
 #### Which three simulators are available in BasicAer?

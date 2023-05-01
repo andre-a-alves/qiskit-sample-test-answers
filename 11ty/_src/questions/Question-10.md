@@ -1,3 +1,7 @@
+---
+title: Question 10
+layout: layouts/base.njk
+---
 # Question 10
 
 #### Which code fragment will produce a multi-qubit gate other than a Toffoli?
@@ -142,7 +146,7 @@ As you can see, answer C creates a Toffoli gate.
 `qc.cry(0,1,2)`
 
 This code fragment applies a $CR_{Y}(0)$ gate, which is not a Toffoli.
-A $CR_{Y}$ is a controlled $R_{Y}$ gate with a $\theta$ of zero.
+A $CR_{Y}$ is a controlled $R_{Y}$ gate with a $	heta$ of zero.
 
 #### Let's take a closer look:
 

@@ -1,3 +1,7 @@
+---
+title: Question 3
+layout: layouts/base.njk
+---
 # Question 3
 
 #### Assuming the fragment below, which three code fragments would produce the circuit illustrated? (Select three)

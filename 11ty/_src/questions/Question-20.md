@@ -1,3 +1,7 @@
+---
+title: Question 20
+layout: layouts/base.njk
+---
 # Question 20
 
 #### Given this code fragment, which output fits most closely with the measurement probability distribution?
@@ -24,7 +28,7 @@ This question asks us to visualize a circuit and determine the output of the mea
 The important concepts one needs in order to understand this question is initial state, the result of an $X$ gate, and endianness.
 Endianness has to do with whether the last digit represents the largest or the smallest number.
 Qiskit uses little-endianness, which means qubit 0 will be the right-most digit, and qubit 1 will be one digit to the left.
-In other words, $|01\rangle$ tells us `qc[0]` is 1 and `qc[1]` is 0.
+In other words, $|01angle$ tells us `qc[0]` is 1 and `qc[1]` is 0.
 
 ## References
 
@@ -60,7 +64,7 @@ qc.draw("mpl")
 
 
 
-Understanding the the circuit began in the $|00\rangle$ state and the $X$ gate flipped the first qubit to 1, we know the result should be $|01\rangle$.
+Understanding the the circuit began in the $|00angle$ state and the $X$ gate flipped the first qubit to 1, we know the result should be $|01angle$.
 
 
 ```python

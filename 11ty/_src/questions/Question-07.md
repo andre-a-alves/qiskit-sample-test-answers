@@ -1,3 +1,7 @@
+---
+title: Question 7
+layout: layouts/base.njk
+---
 # Question 7
 
 #### S-gate is a Qiskit phase gate with what value of the phase parameter?
@@ -14,7 +18,7 @@
 This question is purely a knowledge check to see if you know what an $S$ gate is.
 
 An $S$ gate is a Clifford gate and a square root of a Pauli-z ($Z$) gate.
-It results in a $\frac{\pi}{2}$ rotation about the Z axis.
+It results in a $rac{\pi}{2}$ rotation about the Z axis.
 
 ## References
 
@@ -112,4 +116,4 @@ plot_bloch_multivector(
 
 
 As you can see, the $S$ gate rotated the Bloch vector one quarter turn around the Z axis.
-One quarter turn is equivalent to an angle of $\frac{\pi}{2}$ radians.
+One quarter turn is equivalent to an angle of $rac{\pi}{2}$ radians.

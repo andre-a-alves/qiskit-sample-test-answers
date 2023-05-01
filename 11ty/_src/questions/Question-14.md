@@ -1,3 +1,7 @@
+---
+title: Question 14
+layout: layouts/base.njk
+---
 # Question 14
 
 #### Which code snippet would execute a circuit given these parameters?

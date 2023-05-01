@@ -1,6 +1,10 @@
+---
+title: Question 2
+layout: layouts/base.njk
+---
 # Question 2
 
-#### Given this code fragment, what is the probability that a measurement would result in $|0\rangle$?
+#### Given this code fragment, what is the probability that a measurement would result in $|0angle$?
 
     qc = QuantumCircuit(1)
     qc.ry(3 * math.pi/4, 0)
@@ -14,7 +18,7 @@
 
 ## Question Explanation
 
-This code snippet applies an $R_{Y}$ gate with a $\theta$ of $\frac{3\pi}{4}$ to a $|0\rangle$ qubit.
+This code snippet applies an $R_{Y}$ gate with a $	heta$ of $rac{3\pi}{4}$ to a $|0angle$ qubit.
 This is a rotation along the y axis which brings the Bloch vector to the lower half of the Bloch sphere.
 
 
@@ -50,8 +54,8 @@ plot_bloch_vector(bloch_vector, title="Result of Code Fragment", coord_type="sph
 * 0.8536  
 
 This probability puts the Bloch vector in the top half of the Bloch sphere.
-It would require $\theta$ to be less than $\frac{\pi}{2}$.
-Specifically, this is the probability when $\theta$ is $\frac{\pi}{4}$.
+It would require $	heta$ to be less than $rac{\pi}{2}$.
+Specifically, this is the probability when $	heta$ is $rac{\pi}{4}$.
 
 #### Let's take a closer look:
 
@@ -79,14 +83,14 @@ plot_histogram(Aer.get_backend("statevector_simulator").run(qc).result().get_cou
 
 
 
-As you can see, for answer A to be correct, $\theta$ would need to be $\frac{\pi}{4}$.
+As you can see, for answer A to be correct, $	heta$ would need to be $rac{\pi}{4}$.
 
 ### Answer B
 
 * 0.5
 
-This probability puts the Bloch vector halfway between $|0\rangle$ and $|1\rangle$.
-It would require $\theta$ to be $\frac{\pi}{2}$.
+This probability puts the Bloch vector halfway between $|0angle$ and $|1angle$.
+It would require $	heta$ to be $rac{\pi}{2}$.
 
 #### Let's take a closer look:
 
@@ -114,7 +118,7 @@ plot_histogram(Aer.get_backend("statevector_simulator").run(qc).result().get_cou
 
 
 
-As you can see, answer B would require $\theta$ to be $\frac{\pi}{2}$.
+As you can see, answer B would require $	heta$ to be $rac{\pi}{2}$.
 
 ### Answer C
 
@@ -149,13 +153,13 @@ plot_histogram(Aer.get_backend("statevector_simulator").run(qc).result().get_cou
 
 
 
-As you can see, when $\theta = \frac{3\pi}{4}$, the probability of measuring $|0\rangle$ is 0.146.
+As you can see, when $	heta = rac{3\pi}{4}$, the probability of measuring $|0angle$ is 0.146.
 
 ### Answer D
 
 * 1
 
-This probability has the Bloch vector is at the very top of the Bloch sphere and equals $|0\rangle$.
+This probability has the Bloch vector is at the very top of the Bloch sphere and equals $|0angle$.
 This was the case before we applied an $R_{Y}$ gate. 
 
 #### Let's take a closer look:
@@ -183,7 +187,7 @@ plot_histogram(Aer.get_backend("statevector_simulator").run(qc).result().get_cou
 
 
 
-Now we can add an $R_{Y}$ gate with a $\theta$ of zero, and we will get the same result
+Now we can add an $R_{Y}$ gate with a $	heta$ of zero, and we will get the same result
 
 
 ```python
@@ -203,5 +207,5 @@ plot_histogram(Aer.get_backend("statevector_simulator").run(qc).result().get_cou
 
 
 
-As you can see, no $R_{Y}$ is necessary to have a probability of 1 that the measurement will result in $|0\rangle$.
-$\theta = 0$ will also return the same result.
+As you can see, no $R_{Y}$ is necessary to have a probability of 1 that the measurement will result in $|0angle$.
+$	heta = 0$ will also return the same result.

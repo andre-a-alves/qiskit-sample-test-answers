@@ -1,3 +1,7 @@
+---
+title: Question 5
+layout: layouts/base.njk
+---
 # Question 5
 
 #### Which code fragment will produce a maximally entangled, or Bell, state?
@@ -30,10 +34,10 @@ A Bell state is one in which two qubits are entangled and there is a 50% probabi
 Examples of Bell states are a 50% chance for either |00> or |11> or a 50% chance of |01> or |10>.
 
 In Dirac notation, the four Bell states are:
-* $|\Phi^{+}\rangle = \frac{1}{\sqrt{2}} \left( |00\rangle + |11\rangle \right)$
-* $|\Phi^{-}\rangle = \frac{1}{\sqrt{2}} \left( |00\rangle - |11\rangle \right)$
-* $|\Psi^{+}\rangle = \frac{1}{\sqrt{2}} \left( |01\rangle + |10\rangle \right)$
-* $|\Psi^{-}\rangle = \frac{1}{\sqrt{2}} \left( |01\rangle - |10\rangle \right)$
+* $|\Phi^{+}angle = rac{1}{\sqrt{2}} \left( |00angle + |11angle ight)$
+* $|\Phi^{-}angle = rac{1}{\sqrt{2}} \left( |00angle - |11angle ight)$
+* $|\Psi^{+}angle = rac{1}{\sqrt{2}} \left( |01angle + |10angle ight)$
+* $|\Psi^{-}angle = rac{1}{\sqrt{2}} \left( |01angle - |10angle ight)$
 
 ## References
 
@@ -58,7 +62,7 @@ In Dirac notation, the four Bell states are:
     bell.cx(0, 1)  
 
 The combination of an $H$ gate on the first qubit followed by a $CX$ gate between the first and second qubit creates the Bell state.
-The $X$ gate before the $CX$ gate just makes the two qubits have opposite values: 50% chance for $|01\rangle$ and 50% chance for $|10\rangle$.
+The $X$ gate before the $CX$ gate just makes the two qubits have opposite values: 50% chance for $|01angle$ and 50% chance for $|10angle$.
 
 #### Let's take a closer look:
 
@@ -97,15 +101,15 @@ bell.draw("mpl")
 
 
 Now that we see the circuit, we can examine the resulting statevector and see this is a Bell state.
-Remember that the statevector will be represented as $\left[ |00\rangle, |01\rangle, |10\rangle, |11\rangle, \right]$.
+Remember that the statevector will be represented as $\left[ |00angle, |01angle, |10angle, |11angle, ight]$.
 
 
 ```python
 simulation_result = Aer.get_backend("aer_simulator").run(assemble(bell)).result()
-array_to_latex(simulation_result.get_statevector(), prefix="\\text{Statevector =}")
+array_to_latex(simulation_result.get_statevector(), prefix="\text{Statevector =}")
 ```
 
-So this confirms this circuit produces a Bell state with $|01\rangle$ and $|10\rangle$ as possible outputs.
+So this confirms this circuit produces a Bell state with $|01angle$ and $|10angle$ as possible outputs.
 
 We can go ahead and plot the results of a simulation as well to make it even clearer.
 
@@ -124,9 +128,9 @@ As you can see, answer A creates a Bell state.
     bell.x(1)  
 
 Having the $CX$ gate before the $H$ gate does not create a Bell state in the same way as having a $CX$ gate after the $H$ gate would.
-Since the circuit starts off in $|00\rangle$, the $CX$ gate doesn’t actually do anything.
+Since the circuit starts off in $|00angle$, the $CX$ gate doesn’t actually do anything.
 The $H$ gate makes the first qubit have a 50% chance of being 0 or 1, but the $X$ gate on the second qubit means that qubit will always be 1.
-So, the possible states are $|10\rangle$ or $|11\rangle$.
+So, the possible states are $|10angle$ or $|11angle$.
 
 #### Let's take a closer look:
 
@@ -149,15 +153,15 @@ bell.draw("mpl")
 ```
 
 Now that we see the circuit, we can examine the resulting statevector and see this is a Bell state.
-Remember that the statevector will be represented as $\left[ |00\rangle, |01\rangle, |10\rangle, |11\rangle, \right]$.
+Remember that the statevector will be represented as $\left[ |00angle, |01angle, |10angle, |11angle, ight]$.
 
 
 ```python
 simulation_result = Aer.get_backend("aer_simulator").run(assemble(bell)).result()
-array_to_latex(simulation_result.get_statevector(), prefix="\\text{Statevector =}")
+array_to_latex(simulation_result.get_statevector(), prefix="\text{Statevector =}")
 ```
 
-So this confirms this circuit produces a state with $|10\rangle$ and $|11\rangle$ as possible outputs.
+So this confirms this circuit produces a state with $|10angle$ and $|11angle$ as possible outputs.
 
 We can go ahead and plot the results of a simulation as well to make it even clearer.
 
@@ -177,7 +181,7 @@ As you can see, answer B does not create a Bell state.
 
 The $H$ gate makes the first qubit have a 50% chance of being 0 or 1, but the $X$ gate on the second qubit means that qubit will always be 1.
 Since the $CZ$ gate rotates around the Z axis, it does not affect the outcome of the measurement.
-Consequently, the possible states are $|10\rangle$ or $|11\rangle$.
+Consequently, the possible states are $|10angle$ or $|11angle$.
 
 #### Let's take a closer look:
 
@@ -200,15 +204,15 @@ bell.draw("mpl")
 ```
 
 Now that we see the circuit, we can examine the resulting statevector and see this is a Bell state.
-Remember that the statevector will be represented as $\left[ |00\rangle, |01\rangle, |10\rangle, |11\rangle, \right]$.
+Remember that the statevector will be represented as $\left[ |00angle, |01angle, |10angle, |11angle, ight]$.
 
 
 ```python
 simulation_result = Aer.get_backend("aer_simulator").run(assemble(bell)).result()
-array_to_latex(simulation_result.get_statevector(), prefix="\\text{Statevector =}")
+array_to_latex(simulation_result.get_statevector(), prefix="\text{Statevector =}")
 ```
 
-So this confirms this circuit produces a state with $|10\rangle$ and $|11\rangle$ as possible outputs.
+So this confirms this circuit produces a state with $|10angle$ and $|11angle$ as possible outputs.
 
 We can go ahead and plot the results of a simulation as well to make it even clearer.
 
@@ -226,8 +230,8 @@ As you can see, answer C does not create a Bell state.
     bell.h(0)  
 
 In this circuit, there is no entanglement between the two qubits.
-Furthermore, the two $H$ gates applied to the same qubit return the Bloch vector to $|0\rangle$ for that qubit.
-Therefore, there is a 100% probability that the outcome will be $|00\rangle$.
+Furthermore, the two $H$ gates applied to the same qubit return the Bloch vector to $|0angle$ for that qubit.
+Therefore, there is a 100% probability that the outcome will be $|00angle$.
 
 #### Let's take a closer look:
 
@@ -249,15 +253,15 @@ bell.draw("mpl")
 ```
 
 Now that we see the circuit, we can examine the resulting statevector and see this is a Bell state.
-Remember that the statevector will be represented as $\left[ |00\rangle, |01\rangle, |10\rangle, |11\rangle, \right]$.
+Remember that the statevector will be represented as $\left[ |00angle, |01angle, |10angle, |11angle, ight]$.
 
 
 ```python
 simulation_result = Aer.get_backend("aer_simulator").run(assemble(bell)).result()
-array_to_latex(simulation_result.get_statevector(), prefix="\\text{Statevector =}")
+array_to_latex(simulation_result.get_statevector(), prefix="\text{Statevector =}")
 ```
 
-So this confirms this circuit produces a state with $|00\rangle$ as the only possible output.
+So this confirms this circuit produces a state with $|00angle$ as the only possible output.
 
 We can go ahead and plot the results of a simulation as well to make it even clearer.
 

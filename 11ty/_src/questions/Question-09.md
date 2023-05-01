@@ -1,3 +1,7 @@
+---
+title: Question 9
+layout: layouts/base.njk
+---
 # Question 9
 
 #### Which code fragment will produce a multi-qubit gate other than a CNOT?
