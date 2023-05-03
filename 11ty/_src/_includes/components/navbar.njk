@@ -1,21 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">{{ site.meta.title }}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse mr-auto" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown navbar-right">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Questions
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    {% set pages = collections.question %}
-                    {% for page in pages %}
-                        <a class="dropdown-item" href="{{ page.url}}">{{ page.data.title }}</a>
-                    {%- endfor %}
-                </div>
-            </li>
-        </ul>
-    </div>
+<nav class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item pure-menu-selected">
+            <a href="#" class="pure-menu-link">{{ site.meta.title }}</a>
+        </li>
+        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="#" id="menuLink1" class="pure-menu-link">Questions</a>
+            <ul class="pure-menu-children">
+                {% set pages = collections.question %}
+                {% for page in pages %}
+                    <li class="pure-menu-item">
+                        <a href="{{ page.url}}" class="pure-menu-link">{{ page.data.title }}</a>
+                    </li>
+                {%- endfor %}
+            </ul>
+        </li>
+    </ul>
 </nav>
