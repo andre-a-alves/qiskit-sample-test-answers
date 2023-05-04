@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - live
-  workflows_dispatch:
 jobs:
   build_deploy:
     runs-on: ubuntu-22.04
