@@ -1,4 +1,14 @@
 <footer>
+    {% set question = false %}
+    {% for tag in tags %}
+        {% if tag === "question" %}{% set question = true %}{% endif %}
+    {% endfor %}
+    {% if question %}
+        <p>
+            The question on this page comes from the sample test provided by <a href="https://www.ibm.com">IBM</a> for their IBM Certified Associate Developer - Quantum Computation using Qiskit v0.2x exam, which can be found <a href="https://www.ibm.com/training/certification/C0010300">here</a>.
+            This website is not affiliated with IBM.
+        </p>
+    {% endif %}
     <p>&copy; {{ utilities.copyrightYear() }} - <a href="https://www.linkedin.com/in/andre-a-alves">{{ site.meta.author }}</a></p>
     <p>This page is hosted on <a href="https://github.com/andre-a-alves/qiskit-sample-test-answers">Github</a> where it is available via the <a href="https://github.com/andre-a-alves/qiskit-sample-test-answers/blob/master/LICENSE">GPL3</a> license. Contributions are welcome.</p>
 </footer>
