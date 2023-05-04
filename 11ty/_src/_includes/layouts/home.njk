@@ -1,8 +1,8 @@
 ---
 layout: layouts/base.njk
 ---
+{{ content | safe }}
 
-<h1>Test Test Test</h1>
 <div class="pure-g">
     {% set pages = collections.question %}
     {% for page in pages %}
