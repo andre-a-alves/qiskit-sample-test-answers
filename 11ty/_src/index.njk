@@ -2,10 +2,12 @@
 layout: layouts/base.njk
 ---
 
-{% set pages = collections.question %}
-{% for page in pages %}
-    <ul>
-        <li><a href="{{ page.url}}"> {{ page.data.title }} </a></li>
-    </ul>
-
-{%- endfor %}
+<h1>Test Test Test</h1>
+<div class="pure-g">
+    {% set pages = collections.question %}
+    {% for page in pages %}
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-5 question-list">
+            <a href="{{ page.url}}"> {{ page.data.title }} </a>
+        </div>
+    {%- endfor %}
+</div>

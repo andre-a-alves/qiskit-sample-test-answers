@@ -24,7 +24,9 @@
 </head>
 <body>
     {% include 'components/navbar.njk' %}
-    {{ content | safe }}
+    <div class="page" id="page">
+        {{ content | safe }}
+    </div>
     {% include 'components/footer.njk' %}
 </body>
 </html>
