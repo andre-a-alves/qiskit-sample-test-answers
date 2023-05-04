@@ -7,7 +7,7 @@ jobs:
   build_deploy:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
@@ -19,9 +19,10 @@ jobs:
           npm run build:style
           npm run build:11ty
         working-directory: 11ty
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          publish_dir: ./_site
-          publish_branch: live
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          path: './11ty/_site'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
