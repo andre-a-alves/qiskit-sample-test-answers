@@ -1,0 +1,21 @@
+name: Build and deploy eleventy website
+on:
+  push:
+    branches:
+      - live
+  workflows_dispatch:
+jobs:
+  build_deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        uses: TartanLlama/actions-eleventy@master
+        with:
+          install_dependencies: true
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./_site
+          publish_branch: live
+          github_token: ${{ secrets.GITHUB_TOKEN }}
