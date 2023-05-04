@@ -8,10 +8,16 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
-      - name: Build
-        uses: TartanLlama/actions-eleventy@master
+      - name: Use Node.js
+        uses: actions/setup-node@v1
         with:
-          install_dependencies: true
+          node-version: 12.x
+      - name: Build Stylus
+        run: |
+          npm install
+          npm ci
+          npm run build:style
+          npm run build:11ty
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
