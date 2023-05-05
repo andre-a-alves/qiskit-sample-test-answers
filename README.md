@@ -62,7 +62,7 @@ As an inclusive open-source project, this project adheres to the Contributor Cov
 Please be respectful to all users and contributors.
 
 ## License
-This JupyterLab is licensed under the [GNU GPL v.3.0](LICENSE). 
+This project is licensed under the [GNU GPL v.3.0](LICENSE). 
 
 ## Disclaimer
 This repository is my own work and is not endorsed by IBM or pearsonVue.
