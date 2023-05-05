@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "watch:style": "stylus ./_src/stylus/ --compress --watch --out _src/static",
-    "build:style": "stylus _src/stylus/main.styl --compress",
+    "build:style": "stylus ./_src/stylus/main.styl --compress",
+    "build:style:gh": "stylus ./_src/stylus/main.styl --compress",
     "watch:11ty": "eleventy --serve",
-    "build:11ty": "env NODE_ENV=production npx eleventy --pathprefix 'qiskit-sample-test-answers',",
+    "build:11ty": "eleventy",
+    "build:11ty:gh": "env NODE_ENV=production npx eleventy --pathprefix 'qiskit-sample-test-answers',",
     "clean": "rm -r ./_site",
     "build": "npm run build:style && npm run build:11ty",
     "serve": "concurrently \"npm:watch:style\" \"npm:watch:11ty\""
@@ -17,7 +19,11 @@
   "license": "GPL3",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "stylus": "^0.59.0",
-    "concurrently": "^8.0.1"
+    "concurrently": "^8.0.1",
+    "stylus": "^0.59.0"
+  },
+  "dependencies": {
+    "mathjax": "^3.2.2",
+    "purecss": "^3.0.0"
   }
 }
