@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ site.meta.description }}">
     <title>{% if title %}{{ title }} | {% endif %}{{ site.meta.title }}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="{{ '/static/pure-min.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/static/grids-responsive-min.css' | url }}" />
     <link rel="stylesheet" href="{{ '/static/main.css' | url }}" media="all">
     <!-- mathjax -->
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="{{ '/static/tex-mml-chtml.js' | url }}"></script>
     <script>
         MathJax = {
             tex: {

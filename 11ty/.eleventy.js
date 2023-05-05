@@ -11,14 +11,20 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy(questionFiles);
 
     eleventyConfig.addPassthroughCopy("_src/static")
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/purecss/build/pure-min.css": "static/pure-min.css",
+        "node_modules/purecss/build/grids-responsive-min.css": "static/grids-responsive-min.css",
+        "node_modules/mathjax/es5/tex-mml-chtml.js": "static/tex-mml-chtml.js",
+    })
 
     return {
-        markdownTemplateEngine: "njk",
-        htmlTemplateEngine: "njk",
         dir: {
             input: "_src",
             output: "_site",
             includes: "_includes",
-        }
+        },
+        htmlTemplateEngine: "njk",
+        markdownTemplateEngine: "njk",
+        pathPrefix: "/qiskit-sample-test-answers/",
     }
 }

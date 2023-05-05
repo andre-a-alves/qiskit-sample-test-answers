@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch:style": "stylus ./_src/stylus/ --compress --watch --out _src/static",
-    "build:style": "stylus _src/stylus/main.styl --compress",
+    "build:style": "stylus ./_src/stylus/main.styl --compress",
     "watch:11ty": "eleventy --serve",
     "build:11ty": "eleventy",
     "clean": "rm -r ./_site",
@@ -17,7 +17,11 @@
   "license": "GPL3",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "stylus": "^0.59.0",
-    "concurrently": "^8.0.1"
+    "concurrently": "^8.0.1",
+    "stylus": "^0.59.0"
+  },
+  "dependencies": {
+    "mathjax": "^3.2.2",
+    "purecss": "^3.0.0"
   }
 }
