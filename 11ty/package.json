@@ -9,7 +9,7 @@
     "build:style:gh": "stylus ./_src/stylus/main.styl --compress",
     "watch:11ty": "eleventy --serve",
     "build:11ty": "eleventy",
-    "build:11ty:gh": "env NODE_ENV=production npx eleventy --pathprefix 'qiskit-sample-test-answers',",
+    "build:11ty:gh": "env NODE_ENV=production npx eleventy,",
     "clean": "rm -r ./_site",
     "build": "npm run build:style && npm run build:11ty",
     "serve": "concurrently \"npm:watch:style\" \"npm:watch:11ty\""
