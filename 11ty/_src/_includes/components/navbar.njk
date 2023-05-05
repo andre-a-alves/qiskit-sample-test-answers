@@ -1,0 +1,20 @@
+<nav class="pure-menu pure-menu-horizontal pure-menu-fixed">
+    <div class="pure-u-1-2">
+        <a href="{{ '/' | url }}" class="pure-menu pure-menu-heading">{{ site.meta.title }}</a>
+    </div>
+    <div class="pure-menu pure-u-1-2 right-menu">
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                <a href="#" id="questions-link" class="pure-menu-link">Questions</a>
+                <ul class="pure-menu-children">
+                    {% set pages = collections.question %}
+                    {% for page in pages %}
+                        <li class="pure-menu-item">
+                            <a href="{{ page.url | url }}" class="pure-menu-link">{{ page.data.title }}</a>
+                        </li>
+                    {%- endfor %}
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

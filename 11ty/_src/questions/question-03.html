@@ -1,0 +1,579 @@
+---
+title: Question 3
+layout: layouts/base.njk
+tags: [question]
+---
+
+<div id="cell-id=3af02558-9cfb-4490-a614-18fa834b2f04" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Question-3">Question 3<a class="anchor-link" href="#Question-3">&#182;</a></h1><h4 id="Assuming-the-fragment-below,-which-three-code-fragments-would-produce-the-circuit-illustrated?-(Select-three)">Assuming the fragment below, which three code fragments would produce the circuit illustrated? (Select three)<a class="anchor-link" href="#Assuming-the-fragment-below,-which-three-code-fragments-would-produce-the-circuit-illustrated?-(Select-three)">&#182;</a></h4><pre><code>inp_reg = QuantumRegister(2, name='inp')
+ancilla = QuantumRegister(1, name='anc')
+qc = QuantumCircuit(inp_reg, ancilla)
+
+</code></pre>
+<img alt="Quantum circuit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIsAAACoCAYAAADQIR1nAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjUuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/YYfK9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAKWklEQVR4nO3df0zU9x3H8df3TuRKxOBwI8IVpUZ0Uoo/sDRUB2wONWZC6xFtWHvMH6NhP9p0jLlUSKxgMO2sWbvoMuJcIoim0pYZXEIbD0XNSM+DlGBHFZT4s5GjgklhyH33B+XbnLbzfZS7+3B9PRKS3jdf7j7f9Mnn+73z8v1ouq7rIBIwBXsANHkwFhJjLCTGWEiMsZAYYyExxkJijIXEGAuJMRYSYywkxlhIjLGQGGMhMcZCYoyFxBgLiTEWEmMsJMZYSIyxkBhjITHGQmKMhcQYC4kxFhKbEuwBhLK6j4BrfYF/3bgZwLOpE/+8jMWPrvUBlz4L9igmDk9DJMZYSIyxkBhjITHGQmKMhcQYC4kpG0t7ezs0TUNDQ0Owh0JfUvZDuVmzZuHcuXNYsmRJsIdCX1J2ZomOjsZTTz2FqVOnBnsoAfNOeSZa3isXbw80ZWNJS0tDXl6e8Tg1NRXPPfccjh07hrS0NERERCAhIQFHjhzx+r2MjAysXbsWu3fvxvz582GxWJCYmIiamppAH0LIUfI0NDIygo8//hi5ubkAgHv37qG9vR1utxs3btxAcXExpk+fjrKyMhQUFGDNmjWYPn06dF2Hy+WCx+OB2+3Grl27YLFYUF5ejhdeeAEpKSlISkoK7sFNYkrG8sknn+CLL77A4sWLAQAdHR0YGhrCvHnzcOLECZhMoxPi0NAQcnJycOXKFSQnJ6OzsxMDAwNYtmwZmpqajFNYUlISEhIS0NDQwFi+BSVPQ+fPnwcAIxaXywUAeO2114xQAMDtdgMAYmNjAQBOpxMAsHPnTq9rnTlz5sBisaC3t9fYdvnyZWRkZCAxMRHJyck4ffq0eHyapol+mpocPh97y/sV2PfLKK+f653NPj1HU5NDPEZN08TPq+TM4nK5EBsbi5iYGOPxjBkzkJaW5rVfa2srrFYroqOjAYzGEhUVhezsbK/93G43BgcHYbVajW2FhYXYsGEDioqKcPbsWeTl5aG7uzvoF9RP5ryKJ3O3e217pzwzOIO5j5Izi8vlMmaVscdLly59YD+n0+n11trpdGLWrFkP/LWMXQSvWrUKAHD79m00Nzdj8+bNAID09HTExsbi5MmTovHpui76ycjI9Om4J0pGRqZ4jL4s3aBkLK2trUYsuq6jtbX1gVg8Hs8D+7lcLly7dg2Dg4PGfv39/aisrITNZsO8efMAAD09PYiJiUF4eLixX0JCAq5cueLvQ5vUlIulq6sLn3/+uTFjdHV1ob+/H6mp3t8T7OzsxN27d439Pv30U/T39yMqKgr5+flobGxEbW0tVqxYgbCwMOzbty/gxxJqlLtmGbuYvf/i9v6ZZexidiyWscf19fXYsWMHnnnmGYSHh2PdunWorKzEzJkzjd+Nj4/HrVu3MDQ0ZMwu3d3dmD17th+P7OFs2x0+bQ80LVTWGyouLsahQ4dw8+ZN0f7Z2dnIzc01LnBtNhsuX748oRe4bzUG5zu4c38A/OanE/+8ys0s4+V0Or/2Ivib7N+/HwUFBdi7dy+mTp2Kw4cPB/2dkOpCIhZd13H+/Hm8/PLL4t957LHHcOrUKf8NKgSFRCyapuHOnTvBHkbIU+7dEKmLsZAYYyExxkJijIXEQuLdkKriZoTW64bMJ7jkfzwNkRhjITHGQmKMhcQYC4kxFhJjLCTGWEiMsZAYYyExxkJijIXEGAuJ8SsKfsSFHkiMCz3QdxZjITHGQmKMhcQYC4kxFhJjLCTGWEhM2Vi4Koh6lP0El6uCqEfZmYWrgjx8e6ApGwtXBVGPkqchrgqiJiVjUX1VEOniCOtfPQnrDzO/9ev5qqnJgd9mZ4n3l94bQclYArEqSFlZGWpra3Hx4kUcPXoUNpvNj0ck1/J+BZwNb3htGx68i/jHVwZpRF9RMpZArAqyevVqFBQUYNOmTT6PT/qXOJ6bJk/EqiAZGZl4p3zi76SibCz+XBUEGF0JhHyj5Lshf68KQuOjXCxcFURdyp2GArEqiKpUXxVEuVjWr1/vdQFps9m+9oIyPz8f+fn5xmOn04mYmBikpKSgrq4uIGP9rlHuNDRevq4KUlpaCqvVinPnzqGwsBBWqxWXLl3y4wgnv5CIZWxVkPuva/6fnTt34urVqxgaGkJvby+uXr2KuXPn+nGUk59yp6Hx4KoggRESMwsFBmMhMcZCYoyFxBgLiYXEuyFVcVUQ+s7iaYjEGAuJMRYSYywkxlhIjLGQGGMhMcZCYoyFxBgLiTEWEmMsJMZYSIxfUfCj3/2nA20DAwF/3ZTISPxp/sIJf17G4kdtAwM41ecO9jAmDE9DJMZYSIyxkBhjITHGQmKMhcQYC4kxFhJjLCTGWBShDw9j+MVfY+Svf/PaPvLuexj+uR363btBGtlXJkUsDocDubm5ePTRR2GxWBAXF4ctW7Z43cBHuhDEmPr6eqxcuRJRUVGIiIhAcnIyDhw4EKhDeoAWFoYp234Pz/EGeFytAAC9uxueA/+AuaQY2rRpQRvbmEnxb0NtbW1Yvnw5tm7disjISFy4cAHbt4/ehbqqqkq8EMSY0tJSVFRUwG63o6ioCI888giam5uN27sHizZnNkyb7Bh5401ob72Je5Wvw5TzM5ieSA7quMZMilheeukl4789Hg/S09PR1taGDz/8EIB8IQgAqKurQ3l5OQ4ePAi73W4875o1awJ4RN/MlJsDveUj3Cv8FfD9mTDZnw/2kAzKn4ZGRkZQXV2N5cuXIyYmBmaz2bgJ8rQvp2bpQhDA6KySlZXlFYqvNE0T/TgcjvE99xPJwJ07MP3kx9DCwnx+DofDIR6jdIUTYBLEYrfbsXXrVqSnp6Oqqgpnz55FS0sLIiMjjdlCuhBET08POjo6sHHjxoAfh5Te3Q1PTS1MG/LgOVQD/TMfV4rwI6VPQ+3t7aiurkZVVRU2b95sbD9z5gwGBgaM+95KF4K4fv06ACAuLu5bjUt6l5KVH/3bp++z6P8dHr1OeTYX5l/Yoff1YeT1PTDv3gXNJP+7zszMxAd+uJOK0jNLT08PAGDBggXGtuHhYbzyyisARm/RLl0IAvjqdNTe3u7voY+L58DfoU2ZAtPzo3cONxe9CP3mLXiOvRvkkY1SemZJSUmBxWLBtm3bUFpait7eXuzZswd9fX0wm81YtGiReCEIAIiPj0dWVhYqKipgNpuxdOlSuN1uNDY2Ij8/HytWrAj0IRo8rlZ4Gv6FKX/5M7Qpo/9btIgImP9QjJE/bocpdQm0hISgjQ9QPJa4uDjU1NSgpKQEOTk5SEpKQklJCY4fP47w8HBERESIF4IYc/ToUZSVleHtt9/GjRs3EB0djaeffhoLF078d1Z9YVq8CKb6B9ccMD2eBNM/1ZhZeJswP/L1mmWi/GjG9/BBatrDd/SR0tcspBbGQmKMhcQYC4kxFhJjLCTGWEiMsZCY0p/gTnYpkZEh9br8BJfEeBoiMcZCYoyFxBgLiTEWEmMsJMZYSIyxkBhjITHGQmKMhcQYC4kxFhJjLCTGWEiMsZAYYyExxkJi/wO1tGN4qxcOTgAAAABJRU5ErkJggg==" />
+
+</div>
+</div>
+</div>
+<div id="cell-id=11423c8f-1a34-43f6-bec7-4988fa7d991b" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Answer-Options">Answer Options<a class="anchor-link" href="#Answer-Options">&#182;</a></h2><p><strong>A.</strong><br />
+    qc.h(inp_reg)<br />
+    qc.x(ancilla)<br />
+    qc.draw()<br />
+<strong>B.</strong><br />
+    qc.h(inp_reg[0:2])<br />
+    qc.x(ancilla[0])<br />
+    qc.draw()<br />
+<strong>C.</strong><br />
+    qc.h(inp_reg[0:1])<br />
+    qc.x(ancilla[0])<br />
+    qc.draw()<br />
+<strong>D.</strong><br />
+    qc.h(inp_reg[0])<br />
+    qc.h(inp_reg[1])<br />
+    qc.x(ancilla[0])<br />
+    qc.draw()<br />
+<strong>E.</strong><br />
+    qc.h(inp_reg[1])<br />
+    qc.h(inp_reg[2])<br />
+    qc.x(ancilla[1])<br />
+    qc.draw()<br />
+<strong>F.</strong><br />
+    qc.h(inp_reg)<br />
+    qc.h(inp_reg)<br />
+    qc.x(ancilla)<br />
+    qc.draw()</p>
+
+</div>
+</div>
+</div>
+<div id="cell-id=b0100e8a-2b3d-4cd9-bb93-37de00af7ef6" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-Explanation">Question Explanation<a class="anchor-link" href="#Question-Explanation">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div id="cell-id=e6ab0828-f175-4515-9f7d-43355fed38df" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This important piece to understand from this question is that in Python, the first element of a list has an index of 0.
+One must also understand that the notation <strong>[ x : y ]</strong> mean the numbers will begin at x, and y will be the first index not included in the list.
+So [0:3] will be [0, 1, 2] and [4:5] will be [4].</p>
+
+</div>
+</div>
+</div>
+<div id="cell-id=ddf5e4fd-faf2-4136-9d40-22d5cdf43ad9" class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[0, 1, 2, 3, 4]
+[0, 1, 2]
+[4]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div id="cell-id=c9efafda-6d54-4abe-abd1-8f9ec59d4180" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div id="cell-id=5ab7aaa0-4744-4eda-80c2-9273b4a04900" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://docs.python.org/2.3/whatsnew/section-slices.html">What's New in Python 2.3 - 15 Extended Slices</a></p>
+
+</div>
+</div>
+</div>
+<div id="cell-id=5483029f-3803-4b75-a5e0-786ecfa15907" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Correct-Answer">Correct Answer<a class="anchor-link" href="#Correct-Answer">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div id="cell-id=336be34a-1cbf-4256-bf29-fceefd8ef050" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>A.</strong><br />
+    qc.h(inp_reg)<br />
+    qc.x(ancilla)<br />
+    qc.draw()<br />
+<strong>B.</strong><br />
+    qc.h(inp_reg[0:2])<br />
+    qc.x(ancilla[0])<br />
+    qc.draw()<br />
+<strong>D.</strong><br />
+    qc.h(inp_reg[0])<br />
+    qc.h(inp_reg[1])<br />
+    qc.x(ancilla[0])<br />
+    qc.draw()</p>
+
+</div>
+</div>
+</div>
+<div id="cell-id=e2363f9b-5b8f-49f3-a090-f144e42b232a" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Answer-Explanations">Answer Explanations<a class="anchor-link" href="#Answer-Explanations">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div id="cell-id=3b22859d-45b6-460b-8394-69eaa490ce35" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Answer-A">Answer A<a class="anchor-link" href="#Answer-A">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div id="cell-id=9ef3e69e-81af-4949-9905-6a991dd084ef" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<pre><code>qc.h(inp_reg)  
+qc.x(ancilla)  
+qc.draw() 
+
+</code></pre>
+<p>This would apply an $H$ gate to both <code>inp_reg</code> qubits and an $X$ gate to the <code>ancilla</code> qubit.</p>
+<h4 id="Let's-take-a-closer-look:">Let's take a closer look:<a class="anchor-link" href="#Let's-take-a-closer-look:">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div id="cell-id=dc1866c8-2a62-450b-97c1-79b3dc4f3a47" class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">QuantumRegister</span>
+
+<span class="n">inp_reg</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;inp&quot;</span><span class="p">)</span>
+<span class="n">ancilla</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;anc&quot;</span><span class="p">)</span>
+<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">inp_reg</span><span class="p">,</span> <span class="n">ancilla</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="n">inp_reg</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">x</span><span class="p">(</span><span class="n">ancilla</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">&quot;mpl&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,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"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div id="cell-id=f4b19d3b-db71-4161-861f-ced5648b6630" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see, answer A results in the correct circuit illustration.</p>
+
+</div>
+</div>
+</div>
+<div id="cell-id=00136eb6-dfab-436f-8b2e-e098a4d88b00" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Answer-B">Answer B<a class="anchor-link" href="#Answer-B">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div id="cell-id=f71750b0-e1d5-44bf-b330-b242e59c759c" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<pre><code>qc.h(inp_reg[0:2])  
+qc.x(ancilla[0])  
+qc.draw()  
+
+</code></pre>
+<p>This would apply an $H$ gate to the first two <code>inp_reg</code> qubits, and an $X$ gate to the first <code>ancilla</code> qubit.</p>
+<h4 id="Let's-take-a-closer-look:">Let's take a closer look:<a class="anchor-link" href="#Let's-take-a-closer-look:">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div id="cell-id=9fbe17ec-f8f3-4db3-a00a-7ca7203ae4d5" class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">QuantumRegister</span>
+
+<span class="n">inp_reg</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;inp&quot;</span><span class="p">)</span>
+<span class="n">ancilla</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;anc&quot;</span><span class="p">)</span>
+<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">inp_reg</span><span class="p">,</span> <span class="n">ancilla</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="n">inp_reg</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">x</span><span class="p">(</span><span class="n">ancilla</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">&quot;mpl&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,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"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div id="cell-id=da3bc480-33fb-4345-b821-39747d047ed6" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see, answer B results in the correct circuit illustration.</p>
+
+</div>
+</div>
+</div>
+<div id="cell-id=e894ef46-6324-4b34-bd9c-3fa8cd150391" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Answer-C">Answer C<a class="anchor-link" href="#Answer-C">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div id="cell-id=01952036-25af-4f21-84e3-7bf8628d4cb8" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<pre><code>qc.h(inp_reg[0:1])  
+qc.x(ancilla[0])  
+qc.draw()  
+
+</code></pre>
+<p>This would apply an $H$ gate to the first <code>inp_reg</code> qubit and an $X$ gate to the first <code>ancilla</code> qubit.
+However, no gate would be applied to the second <code>inp_reg</code> qubit.</p>
+<h4 id="Let's-take-a-closer-look:">Let's take a closer look:<a class="anchor-link" href="#Let's-take-a-closer-look:">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div id="cell-id=20ee2824-6568-4968-bbce-910737713986" class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">QuantumRegister</span>
+
+<span class="n">inp_reg</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;inp&quot;</span><span class="p">)</span>
+<span class="n">ancilla</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;anc&quot;</span><span class="p">)</span>
+<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">inp_reg</span><span class="p">,</span> <span class="n">ancilla</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="n">inp_reg</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">x</span><span class="p">(</span><span class="n">ancilla</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">&quot;mpl&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,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"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div id="cell-id=41670744-4354-4f34-8b46-f71c27994ab4" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see, the second <code>inp_reg</code> qubit has no gate applied and does not match the circuit illustrated.</p>
+
+</div>
+</div>
+</div>
+<div id="cell-id=15afd510-0fb4-43fa-8caf-7f3ce5e1302e" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Answer-D">Answer D<a class="anchor-link" href="#Answer-D">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div id="cell-id=162e7c30-818a-4dd8-8c4e-4ff6a47dc3d8" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<pre><code>qc.h(inp_reg[0])  
+qc.h(inp_reg[1])  
+qc.x(ancilla[0])  
+qc.draw()  
+
+</code></pre>
+<p>This would apply an $H$ gate to the first <code>inp_reg</code> qubit, then an $H$ gate to the second <code>inp_reg</code> qubit, and finally an $X$ gate to the first <code>ancilla</code> qubit.</p>
+<h4 id="Let's-take-a-closer-look:">Let's take a closer look:<a class="anchor-link" href="#Let's-take-a-closer-look:">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div id="cell-id=f90493bd-a044-4813-9692-933fb33723c1" class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">QuantumRegister</span>
+
+<span class="n">inp_reg</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;inp&quot;</span><span class="p">)</span>
+<span class="n">ancilla</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;anc&quot;</span><span class="p">)</span>
+<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">inp_reg</span><span class="p">,</span> <span class="n">ancilla</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="n">inp_reg</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="n">inp_reg</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">x</span><span class="p">(</span><span class="n">ancilla</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">&quot;mpl&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,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"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div id="cell-id=a2611d56-3c8a-4839-b2a6-574f6188ff90" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see, answer D results in the correct circuit illustration.</p>
+
+</div>
+</div>
+</div>
+<div id="cell-id=2aa00b0d-e844-46e0-bbd0-a987c938f202" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Answer-E">Answer E<a class="anchor-link" href="#Answer-E">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div id="cell-id=4a183888-a1a1-4ea3-8d34-e5095b3dfd06" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<pre><code>qc.h(inp_reg[1])  
+qc.h(inp_reg[2])  
+qc.x(ancilla[1])  
+qc.draw()  
+
+</code></pre>
+<p>This would apply an $H$ gate to the second <code>inp_reg</code> qubit, an $H$ gate to a nonexistant third <code>inp_reg</code> qubit resulting in an error, and an $X$ gate to the nonexistant second <code>ancilla</code> qubit.
+This code will result in an error</p>
+<h4 id="Let's-take-a-closer-look:">Let's take a closer look:<a class="anchor-link" href="#Let's-take-a-closer-look:">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div id="cell-id=a317fd4f-1139-49ba-8419-881232bd8884" class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">QuantumRegister</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">inp_reg</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;inp&quot;</span><span class="p">)</span>
+    <span class="n">ancilla</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;anc&quot;</span><span class="p">)</span>
+    <span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">inp_reg</span><span class="p">,</span> <span class="n">ancilla</span><span class="p">)</span>
+    <span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="n">inp_reg</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="n">inp_reg</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">qc</span><span class="o">.</span><span class="n">x</span><span class="p">(</span><span class="n">ancilla</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">&quot;mpl&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Error: list index out of range
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div id="cell-id=935602a1-d501-4195-8359-ea41a770e1c5" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see, answer E results in an error and cannot be run.</p>
+
+</div>
+</div>
+</div>
+<div id="cell-id=512e5e67-7706-47a9-af21-724cc7b7cf43" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Answer-F">Answer F<a class="anchor-link" href="#Answer-F">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div id="cell-id=22bb676e-140f-4eb0-9462-6b33ecf2d04b" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<pre><code>qc.h(inp_reg)  
+qc.h(inp_reg)  
+qc.x(ancilla)  
+qc.draw()  
+
+</code></pre>
+<p>This would apply two $H$ gates to all of the <code>inp_reg</code> qubits, and an $X$ gate to the <code>ancilla</code> qubit.</p>
+<h4 id="Let's-take-a-closer-look:">Let's take a closer look:<a class="anchor-link" href="#Let's-take-a-closer-look:">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div id="cell-id=909332e9-0d70-4686-9675-0c95a386d71e" class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">QuantumRegister</span>
+
+<span class="n">inp_reg</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;inp&quot;</span><span class="p">)</span>
+<span class="n">ancilla</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;anc&quot;</span><span class="p">)</span>
+<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">inp_reg</span><span class="p">,</span> <span class="n">ancilla</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="n">inp_reg</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="n">inp_reg</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">x</span><span class="p">(</span><span class="n">ancilla</span><span class="p">)</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s2">&quot;mpl&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,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"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div id="cell-id=8e1a0977-dee2-4927-af62-84f0249f37a9" class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see, answer F results in a circuit with too many $H$ gates.</p>
+
+</div>
+</div>
+</div>
+
+
