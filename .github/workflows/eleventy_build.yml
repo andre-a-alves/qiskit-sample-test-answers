@@ -2,7 +2,7 @@ name: Build and deploy eleventy website
 on:
   push:
     branches:
-      - live
+      - main
 permissions:
   contents: read
   pages: write
@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 20.x
-      - name: Build Stylus
+      - name: Build Stylus and Eleventy
         run: |
           npm install
           npm ci
