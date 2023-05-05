@@ -17,6 +17,41 @@ Each question breakdown contains the following information:
 * The correct answer
 * An explanation about why each question is correct or incorrect, including code examples
 
+## Getting Started
+There are two ways to use this resource. You can either visit the website, or you can run the [Jupyter Lab](https://jupyter.org).
+
+### Website
+The [website](https://andre-a-alves.github.io/qiskit-sample-test-answers/) is a statically-generated website (for performance) built from the Jupyter Notebooks used in this project.
+It contains all the information from the notebooks, and plans exist to improve it over time.
+To use the website, all you need to do it visit the link and start reading.
+
+My future plans with the website include:
+* Make question sections collapsible, so you only read the description you are interested in at any given time
+* Add a dark theme
+
+### JupyterLab
+Since the website is generated from Jupyter Notebooks, you can also download and run the Jupyter Notebook files locally.
+This is actually the original experience.
+
+#### Clone the repository
+To begin, download this repository onto your own system.
+There are several ways to do so, but the easiest will be via the command line with the following command:
+```bash
+git clone git@github.com:andre-a-alves/qiskit-sample-test-answers.git
+```
+Next, I highly recommend setting up a virtual environment for this project.
+Instructions for how to do so with `venv` are available in [the Python documentation](https://docs.python.org/3/library/venv.html).
+
+#### Install Dependencies
+Once you have set up and activated your virtual environment, navigate to the directory containing your local version of this repository.
+
+Run the following command to install the dependencies:
+* `pip install -r requirements.txt`
+
+#### Run JupyterLab
+Run the following command to open your JupyterLab:
+* `jupyter-lab`
+
 ## Contributing/Feedback
 While I am a Qiskit-certified developer, I am not a quantum physicist, nor do I have decades of experience making websites, so I am sure there is room for improvement!
 Contributions are more than welcome.
