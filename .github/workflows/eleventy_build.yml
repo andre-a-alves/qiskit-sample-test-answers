@@ -2,7 +2,7 @@ name: Build and deploy eleventy website
 on:
   push:
     branches:
-      - main
+      - master
 permissions:
   contents: read
   pages: write
