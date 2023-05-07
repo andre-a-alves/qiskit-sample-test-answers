@@ -2,13 +2,13 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
-    const questionFiles = {}
+    const questionFiles = []
     const questionBase = "_src/questions"
     for (const n of Array(20).keys()) {
         const numStr = String(n).padStart(2, '0');
-        questionFiles[`${questionBase}/images/question-${n}.png`]= `questions/Question-${numStr}/images/question-${n}.png`;
+        eleventyConfig.addPassthroughCopy(`${questionBase}/question-${numStr}/*`)
+        eleventyConfig.addPassthroughCopy(`${questionBase}/jake/*`)
     }
-    eleventyConfig.addPassthroughCopy(questionFiles);
 
     eleventyConfig.addPassthroughCopy("_src/static")
     eleventyConfig.addPassthroughCopy({
