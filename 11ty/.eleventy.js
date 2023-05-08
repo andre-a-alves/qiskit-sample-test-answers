@@ -1,13 +1,14 @@
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 module.exports = function (eleventyConfig) {
 
     eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+    eleventyConfig.addPlugin(syntaxHighlight);
 
-    const questionFiles = []
     const questionBase = "_src/questions"
     for (const n of Array(20).keys()) {
         const numStr = String(n).padStart(2, '0');
         eleventyConfig.addPassthroughCopy(`${questionBase}/question-${numStr}/*`)
-        eleventyConfig.addPassthroughCopy(`${questionBase}/jake/*`)
     }
 
     eleventyConfig.addPassthroughCopy("_src/static")
