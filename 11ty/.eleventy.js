@@ -7,7 +7,7 @@ module.exports = function (eleventyConfig) {
 
     const questionBase = "_src/questions"
     for (const n of Array(20).keys()) {
-        const numStr = String(n).padStart(2, '0');
+        const numStr = String(n + 1).padStart(2, '0');
         eleventyConfig.addPassthroughCopy(`${questionBase}/question-${numStr}/*`)
     }
 
