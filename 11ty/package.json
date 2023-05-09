@@ -17,6 +17,7 @@
   "license": "GPL3",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "concurrently": "^8.0.1",
     "stylus": "^0.59.0"
   },
