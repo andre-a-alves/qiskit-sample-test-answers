@@ -15,24 +15,24 @@ ELEVENTY_PATH: str = "../11ty/_src/questions"
 class MdOutputPreprocessor(Preprocessor):
     def preprocess(self, nb, resources):
         processed_cells = []
-        for cell in nb['cells']:
-            if cell['cell_type'] == "code":
-                for output in cell['outputs']:
-                    if 'text' in output.keys():
+        for cell in nb["cells"]:
+            if cell["cell_type"] == "code":
+                for output in cell["outputs"]:
+                    if "text" in output.keys():
                         next_cell = {
                             "cell_type": "markdown",
                             "source": f"**Output**:\n```bash\n{output['text']}\n```",
                             "id": str(hash(f"output['text']{time.time()}")),
                             "metadata": {"tags": ["test"]},
                         }
-                        cell['outputs'].remove(output)
+                        cell["outputs"].remove(output)
                         processed_cells.append(cell)
                         processed_cells.append(nbformat.from_dict(next_cell))
                     else:
                         processed_cells.append(cell)
             else:
                 processed_cells.append(cell)
-        nb['cells'] = processed_cells
+        nb["cells"] = processed_cells
         return nb, resources
 
 
@@ -49,8 +49,8 @@ def convert_notebook(notebook: NotebookNode, exporter: Exporter) -> tuple:
 def embed_embedded_images_in_markdown(markdown: str) -> str:
     markdown_split = markdown.split("![png](data:image/png;base64")
     for i, substring in enumerate(markdown_split[1:]):
-        markdown_split[i + 1] = substring.replace(")", "\b\" />", 1)
-    return "<img src=\"data:image/png;base64".join(markdown_split)
+        markdown_split[i + 1] = substring.replace(")", '\b" />', 1)
+    return '<img src="data:image/png;base64'.join(markdown_split)
 
 
 def export_md_file(contents: str, filename: str):
@@ -75,7 +75,7 @@ def prepend_tags(title: str, tags: list, md_text: str) -> str:
     prepend = [
         ["---", f"title: {title}", "layout: layouts/base.njk", "tags:"],
         [f"  - {tag}" for tag in tags],
-        ["---", md_text]
+        ["---", md_text],
     ]
     return "\n".join([string for sublist in prepend for string in sublist])
 
@@ -89,7 +89,9 @@ def titleify_basename(base: str) -> str:
 
 def create_argument_parser() -> ArgumentParser:
     parser = ArgumentParser()
-    parser.add_argument('-if', '--inputs', nargs="+", help="The Notebooks to be converted")
+    parser.add_argument(
+        "-if", "--inputs", nargs="+", help="The Notebooks to be converted"
+    )
     return parser
 
 
@@ -105,11 +107,11 @@ def main() -> int:
         title: str = titleify_basename(base_name)
         saved_notebook = get_notebook(arg)
         (md_body, md_resources) = convert_notebook(saved_notebook, markdown_exporter)
-        if md_resources['outputs']:
+        if md_resources["outputs"]:
             dir_path = f"{ELEVENTY_PATH}/{base_name}"
             if not os.path.exists(dir_path):
                 os.mkdir(f"{ELEVENTY_PATH}/{base_name}")
-            write_images(base_name, md_resources['outputs'])
+            write_images(base_name, md_resources["outputs"])
         parts = md_body.split("##")
         parts[0:3] = ["##".join(parts[0:3])]
         for i, part in enumerate(parts):
