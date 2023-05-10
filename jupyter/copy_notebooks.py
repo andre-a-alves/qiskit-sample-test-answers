@@ -110,7 +110,42 @@ def main() -> int:
             if not os.path.exists(dir_path):
                 os.mkdir(f"{ELEVENTY_PATH}/{base_name}")
             write_images(base_name, md_resources['outputs'])
-        export_md_file(prepend_tags(title, ["question", base_name], md_body), f"{base_name}.md")
+        parts = md_body.split("##")
+        parts[0:3] = ["##".join(parts[0:3])]
+        for i, part in enumerate(parts):
+            if part[0:10] == "# Imports":
+                continue
+            tags = [base_name]
+            filename = f"{base_name}.md"
+            match i:
+                case 0:
+                    tags.extend(["question"])
+                case 1:
+                    title = "Answer Options"
+                    tags.extend(["answer_options"])
+                    filename = f"{base_name}-options.md"
+                case 2:
+                    title = "Question Explanation"
+                    tags.extend(["explanation"])
+                    filename = f"{base_name}-explanation.md"
+                case 3:
+                    title = "References"
+                    tags.extend(["references"])
+                    filename = f"{base_name}-references.md"
+                case 4:
+                    title = "Correct Answer"
+                    tags.extend(["correct_answer"])
+                    filename = f"{base_name}-answer.md"
+                case 5:
+                    title = "Explanations"
+                    tags.extend(["explanations"])
+                    filename = f"{base_name}-explanations.md"
+                case _:
+                    title = "pass"
+                    subtitle = title.lower().replace(" ", "-")
+                    tags.extend(["explanation", subtitle])
+                    filename = f"{base_name}-{subtitle}.md"
+            export_md_file(prepend_tags(title, tags, part), filename)
 
     return 0
 
