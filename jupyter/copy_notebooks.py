@@ -21,7 +21,7 @@ class MdOutputPreprocessor(Preprocessor):
                     if 'text' in output.keys():
                         next_cell = {
                             "cell_type": "markdown",
-                            "source": f"Console Output:\n```bash\n{output['text']}\n```",
+                            "source": f"**Output**:\n```bash\n{output['text']}\n```",
                             "id": str(hash(f"output['text']{time.time()}")),
                             "metadata": {"tags": ["test"]},
                         }
