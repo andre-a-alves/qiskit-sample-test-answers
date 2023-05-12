@@ -1,0 +1,39 @@
+---
+layout: layouts/base.njk
+---
+{% set answersPath = collections.pagesWithTags(tags[0], 'answer_options')[0].outputPath %}
+{% set explanationPath = collections.pagesWithTags(tags[0], 'explanation')[0].outputPath %}
+{% set referencesPath = collections.pagesWithTags(tags[0], 'references')[0].outputPath %}
+{% set correctAnswerPath = collections.pagesWithTags(tags[0], 'correct_answer')[0].outputPath %}
+{% set explanationsPath = collections.pagesWithTags(tags[0], 'explanations')[0].outputPath %}
+
+{{ content | safe }}
+{% include answersPath %}
+
+<div class="pure-g">
+    <div class="pure-u-1-2 pure-u-md-1-4 centered-content vertical-padding">
+        <button class="pure-button" onclick="toggleVisibility('question-explanation', 'question-level');toggleActive(this)">Question Explanation</button>
+    </div>
+    <div class="pure-u-1-2 pure-u-md-1-4 centered-content vertical-padding">
+        <button class="pure-button" onclick="toggleVisibility('question-references', 'question-level');toggleActive(this)">References</button>
+    </div>
+    <div class="pure-u-1-2 pure-u-md-1-4 centered-content vertical-padding">
+        <button class="pure-button" onclick="toggleVisibility('correct-answers', 'question-level');toggleActive(this)">Correct Answer(s)</button>
+    </div>
+    <div class="pure-u-1-2 pure-u-md-1-4 centered-content vertical-padding">
+        <button class="pure-button" onclick="toggleVisibility('answer-breakdowns', 'question-level');toggleActive(this)">Answer Breakdowns</button>
+    </div>
+</div>
+
+<div id="question-explanation" class="hidden question-level">
+    {% include explanationPath %}
+</div>
+<div id="question-references" class="hidden question-level">
+    {% include referencesPath %}
+</div>
+<div id="correct-answers" class="hidden question-level">
+    {% include correctAnswerPath %}
+</div>
+<div id="answer-breakdowns" class="hidden question-level">
+    {% include explanationsPath %}
+</div>

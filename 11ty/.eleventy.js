@@ -21,6 +21,17 @@ module.exports = function (eleventyConfig) {
         "node_modules/mathjax/es5/tex-mml-chtml.js": "static/tex-mml-chtml.js",
     })
 
+    eleventyConfig.addCollection("pagesWithTag", function(collectionApi) {
+        return function(tag) {
+            return collectionApi.getFilteredByTag(tag);
+        };
+    });
+    eleventyConfig.addCollection("pagesWithTags", function(collectionApi) {
+        return function(tag1, tag2) {
+            return collectionApi.getFilteredByTags(tag1, tag2);
+        };
+    });
+
     return {
         dir: {
             input: "_src",
