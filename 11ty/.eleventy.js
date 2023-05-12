@@ -13,7 +13,10 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy("_src/static")
     eleventyConfig.addPassthroughCopy({
-        "node_modules/purecss/build/pure-min.css": "static/pure-min.css",
+        "node_modules/purecss/build/grids-min.css": "static/grids-min.css",
+        "node_modules/purecss/build/base-min.css": "static/base-min.css",
+        "node_modules/purecss/build/menus-min.css": "static/menus-min.css",
+        "node_modules/purecss/build/buttons-min.css": "static/buttons-min.css",
         "node_modules/purecss/build/grids-responsive-min.css": "static/grids-responsive-min.css",
         "node_modules/mathjax/es5/tex-mml-chtml.js": "static/tex-mml-chtml.js",
     })
