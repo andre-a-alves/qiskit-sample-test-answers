@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ site.meta.description }}">
     <title>{% if title %}{{ title }} | {% endif %}{{ site.meta.title }}</title>
-    <link rel="stylesheet" href="{{ '/static/base-min.css' | url }}" />
-    <link rel="stylesheet" href="{{ '/static/grids-min.css' | url }}" />
-    <link rel="stylesheet" href="{{ '/static/grids-responsive-min.css' | url }}" />
-    <link rel="stylesheet" href="{{ '/static/buttons-min.css' | url }}" />
-    <link rel="stylesheet" href="{{ '/static/menus-min.css' | url }}" />
+
+    <link rel="stylesheet" type="text/css" href="{{ '/static/carbon-components.min.css' | url }}">
     <link rel="stylesheet" href="{{ '/static/main.css' | url }}" media="all" />
-    <script id="button-script" src="{{ '/static/button.js' | url }}"></script>
+    <script type="module" src="{{ '/static/ui-shell.min.js' | url }}"></script>
+    <script type="module" src="{{ '/static/link.min.js' | url }}"></script>
+    <script type="module" src="{{ '/static/code-snippet.min.js' | url }}"></script>
+    <script type="module" src="{{ '/static/accordion.min.js' | url }}"></script>
+    <script type="module" src="{{ '/static/list.min.js' | url }}"></script>
+    <script type="module" src="{{ '/static/tabs.min.js' | url }}"></script>
     <!-- mathjax -->
-    <script id="MathJax-script" async src="{{ '/static/tex-mml-chtml.js' | url }}"></script>
+    <script id="MathJax-script" async src="{{ '/static/tex-chtml-full.js' | url }}"></script>
     <script>
         MathJax = {
             tex: {
@@ -24,12 +26,17 @@
             }
         };
     </script>
+
 </head>
 <body>
     {% include 'components/navbar.njk' %}
-    <div class="page" id="page">
-        {{ content | safe }}
-    </div>
+    <main class="bx--content">
+        <div class="bx--grid">
+                <div class="bx--offset-lg-3 bx-col-lg-13 g10-theme">
+                    {{ content | safe }}
+                </div>
+        </div>
+    </main>
     {% include 'components/footer.njk' %}
 </body>
 </html>

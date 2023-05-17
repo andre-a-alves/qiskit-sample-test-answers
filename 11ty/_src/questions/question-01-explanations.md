@@ -4,6 +4,8 @@ layout: layouts/simple.njk
 tags:
   - question-01
   - explanations
+permalink: "questions/question-01/{{ page.fileSlug }}.html"
+
 ---
 
 

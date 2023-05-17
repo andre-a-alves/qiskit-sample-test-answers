@@ -1,0 +1,14 @@
+@import 'carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/themes/mixins';
+
+@include carbon--theme();
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr 5rem;
+}

@@ -4,7 +4,8 @@ layout: layouts/simple.njk
 tags:
   - question-01
   - answer_options
-permalink: "questions/question-01/{{  page.fileSlug }}.html"
+permalink: "questions/question-01/{{ page.fileSlug }}.html"
+
 ---
 
 

@@ -6,10 +6,14 @@ from nbconvert.preprocessors import Preprocessor
 from nbformat import NotebookNode
 from traitlets.config import Config
 import nbformat
+import re
 import os
 import time
 
 ELEVENTY_PATH: str = "../11ty/_src/questions"
+H1_REGEX = r"#\s(.+)\n\n"
+H2_REGEX = r"\n##\s(.+)"
+H3_REGEX = r"\n\n###\s(.+)"
 
 
 class MdOutputPreprocessor(Preprocessor):
@@ -71,11 +75,11 @@ def strip_filetype(filename: str) -> str:
         return filename.split(".")[0].lower()
 
 
-def prepend_tags(title: str, tags: list, md_text: str) -> str:
+def prepend_tags(title: str, tags: list, layout: str, md_text: str, base_name: str) -> str:
     prepend = [
-        ["---", f"title: {title}", "layout: layouts/base.njk", "tags:"],
+        ["---", f"title: {title}", f"layout: layouts/{layout}.njk", "tags:"],
         [f"  - {tag}" for tag in tags],
-        ["---", md_text],
+        [f"permalink: \"questions/{base_name}/{{{{ page.fileSlug }}}}.html\"\n", "---", md_text],
     ]
     return "\n".join([string for sublist in prepend for string in sublist])
 
@@ -101,7 +105,9 @@ def main() -> int:
     markdown_exporter = MarkdownExporter(config=conf)
 
     args = create_argument_parser().parse_args()
+    # args = ["Question-13.nbconvert.ipynb"]
     for arg in args.inputs:
+    # for arg in args:
         print(f"Copying {arg}...")
         base_name: str = strip_filetype(arg)
         title: str = titleify_basename(base_name)
@@ -112,42 +118,71 @@ def main() -> int:
             if not os.path.exists(dir_path):
                 os.mkdir(f"{ELEVENTY_PATH}/{base_name}")
             write_images(base_name, md_resources["outputs"])
-        parts = md_body.split("##")
-        parts[0:3] = ["##".join(parts[0:3])]
+        parts = re.split(H2_REGEX, md_body)
+        breakdowns = re.split(H3_REGEX, parts[10])
+
         for i, part in enumerate(parts):
-            if part[0:10] == "# Imports":
-                continue
+            layout = "simple"
             tags = [base_name]
             filename = f"{base_name}.md"
             match i:
                 case 0:
                     tags.extend(["question"])
+                    layout = "question"
+                    i -= 1
                 case 1:
-                    title = "Answer Options"
+                    title = part
                     tags.extend(["answer_options"])
                     filename = f"{base_name}-options.md"
-                case 2:
-                    title = "Question Explanation"
+                case 3:
+                    title = part
                     tags.extend(["explanation"])
                     filename = f"{base_name}-explanation.md"
-                case 3:
-                    title = "References"
+                case 5:
+                    title = part
                     tags.extend(["references"])
                     filename = f"{base_name}-references.md"
-                case 4:
-                    title = "Correct Answer"
+                case 7:
+                    title = part
                     tags.extend(["correct_answer"])
                     filename = f"{base_name}-answer.md"
-                case 5:
-                    title = "Explanations"
-                    tags.extend(["explanations"])
-                    filename = f"{base_name}-explanations.md"
                 case _:
-                    title = "pass"
-                    subtitle = title.lower().replace(" ", "-")
-                    tags.extend(["explanation", subtitle])
-                    filename = f"{base_name}-{subtitle}.md"
-            export_md_file(prepend_tags(title, tags, part), filename)
+                    continue
+            export_md_file(prepend_tags(title, tags, layout, parts[i + 1], base_name), filename)
+
+        tags = [base_name, "breakdown_base"]
+        title = "Answers Breakdown"
+        filename = f"{base_name}-breakdown.md"
+        if len(breakdowns) > 4:
+            export_md_file(
+                prepend_tags(
+                    title=title,
+                    tags=tags,
+                    layout="breakdown",
+                    md_text="",
+                    base_name=base_name,
+                ),
+                filename,
+            )
+            for i, part in enumerate(breakdowns[3:]):
+                if i % 2 == 1:
+                    continue
+                answer_base = part.lower().replace(" ", "-")
+                tags = [base_name, "breakdown", answer_base]
+                title = part
+                filename = f"{base_name}-{answer_base}.md"
+                export_md_file(prepend_tags(title, tags, "simple", breakdowns[i + 4], base_name), filename)
+        else:
+            export_md_file(
+                prepend_tags(
+                    title=title,
+                    tags=tags,
+                    layout="breakdown",
+                    md_text=breakdowns[0],
+                    base_name=base_name,
+                ),
+                filename,
+            )
 
     return 0
 
