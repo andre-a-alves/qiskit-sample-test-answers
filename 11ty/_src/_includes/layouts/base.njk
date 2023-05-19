@@ -30,12 +30,8 @@
 </head>
 <body>
     {% include 'components/navbar.njk' %}
-    <main class="bx--content">
-        <div class="bx--grid">
-                <div class="bx--offset-lg-3 bx-col-lg-13 g10-theme">
-                    {{ content | safe }}
-                </div>
-        </div>
+    <main class="bx--content bx--offset-lg-3">
+            {{ content | safe }}
     </main>
     {% include 'components/footer.njk' %}
 </body>
