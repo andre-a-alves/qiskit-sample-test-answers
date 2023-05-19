@@ -10,7 +10,7 @@
     "build:11ty": "eleventy",
     "clean": "rm -r ./_site",
     "build": "npm run build:style && npm run build:11ty; npm run build:11ty",
-    "serve": "concurrently \"npm:watch:style\" \"npm:watch:11ty\"",
+    "serve": "npm run build:11ty; concurrently \"npm:watch:style\" \"npm:watch:11ty\"",
     "test": "node testing.js"
   },
   "keywords": [],

@@ -105,14 +105,14 @@ def main() -> int:
     markdown_exporter = MarkdownExporter(config=conf)
 
     args = create_argument_parser().parse_args()
-    # args = ["Question-13.nbconvert.ipynb"]
     for arg in args.inputs:
-    # for arg in args:
         print(f"Copying {arg}...")
         base_name: str = strip_filetype(arg)
         title: str = titleify_basename(base_name)
         saved_notebook = get_notebook(arg)
         (md_body, md_resources) = convert_notebook(saved_notebook, markdown_exporter)
+        if not os.path.exists(ELEVENTY_PATH):
+            os.makedirs(ELEVENTY_PATH)
         if md_resources["outputs"]:
             dir_path = f"{ELEVENTY_PATH}/{base_name}"
             if not os.path.exists(dir_path):
@@ -164,14 +164,15 @@ def main() -> int:
                 ),
                 filename,
             )
-            for i, part in enumerate(breakdowns[3:]):
+            first_idx = 3 if len(breakdowns) > 7 else 1
+            for i, part in enumerate(breakdowns[first_idx:]):
                 if i % 2 == 1:
                     continue
                 answer_base = part.lower().replace(" ", "-")
                 tags = [base_name, "breakdown", answer_base]
                 title = part
                 filename = f"{base_name}-{answer_base}.md"
-                export_md_file(prepend_tags(title, tags, "simple", breakdowns[i + 4], base_name), filename)
+                export_md_file(prepend_tags(title, tags, "simple", breakdowns[i + first_idx + 1], base_name), filename)
         else:
             export_md_file(
                 prepend_tags(
