@@ -23,11 +23,10 @@ jobs:
       - name: Execute notebooks and make markdown
         run: |
           pip install -r requirements.txt
-          cd jupyter
           jupyter nbconvert --to notebook --execute Question*.ipynb
           python copy_notebooks.py -if ./*.nbconvert.ipynb
           rm ./*.nbconvert.ipynb
-          cd ..
+        working-directory: jupyter
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
