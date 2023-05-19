@@ -23,8 +23,7 @@ jobs:
         run: |
           npm install
           npm ci
-          npm run build:style
-          npm run build:11ty
+          npm run build
         working-directory: 11ty
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
