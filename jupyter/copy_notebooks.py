@@ -75,11 +75,17 @@ def strip_filetype(filename: str) -> str:
         return filename.split(".")[0].lower()
 
 
-def prepend_tags(title: str, tags: list, layout: str, md_text: str, base_name: str) -> str:
+def prepend_tags(
+    title: str, tags: list, layout: str, md_text: str, base_name: str
+) -> str:
     prepend = [
         ["---", f"title: {title}", f"layout: layouts/{layout}.njk", "tags:"],
         [f"  - {tag}" for tag in tags],
-        [f"permalink: \"questions/{base_name}/{{{{ page.fileSlug }}}}.html\"\n", "---", md_text],
+        [
+            f'permalink: "questions/{base_name}/{{{{ page.fileSlug }}}}.html"\n',
+            "---",
+            md_text,
+        ],
     ]
     return "\n".join([string for sublist in prepend for string in sublist])
 
@@ -148,7 +154,9 @@ def main() -> int:
                     filename = f"{base_name}-answer.md"
                 case _:
                     continue
-            export_md_file(prepend_tags(title, tags, layout, parts[i + 1], base_name), filename)
+            export_md_file(
+                prepend_tags(title, tags, layout, parts[i + 1], base_name), filename
+            )
 
         tags = [base_name, "breakdown_base"]
         title = "Answers Breakdown"
@@ -172,7 +180,12 @@ def main() -> int:
                 tags = [base_name, "breakdown", answer_base]
                 title = part
                 filename = f"{base_name}-{answer_base}.md"
-                export_md_file(prepend_tags(title, tags, "simple", breakdowns[i + first_idx + 1], base_name), filename)
+                export_md_file(
+                    prepend_tags(
+                        title, tags, "simple", breakdowns[i + first_idx + 1], base_name
+                    ),
+                    filename,
+                )
         else:
             export_md_file(
                 prepend_tags(
