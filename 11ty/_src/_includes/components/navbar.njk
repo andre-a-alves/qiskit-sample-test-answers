@@ -1,20 +1,26 @@
-<nav class="pure-menu pure-menu-horizontal pure-menu-fixed">
-    <div class="pure-u-1-2">
-        <a href="{{ '/' | url }}" class="pure-menu pure-menu-heading">{{ site.meta.title }}</a>
-    </div>
-    <div class="pure-menu pure-u-1-2 right-menu">
-        <ul class="pure-menu-list">
-            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                <a href="#" id="questions-link" class="pure-menu-link">Questions</a>
-                <ul class="pure-menu-children">
-                    {% set pages = collections.question %}
-                    {% for page in pages %}
-                        <li class="pure-menu-item">
-                            <a href="{{ page.url | url }}" class="pure-menu-link">{{ page.data.title }}</a>
-                        </li>
-                    {%- endfor %}
-                </ul>
-            </li>
-        </ul>
-    </div>
-</nav>
+<bx-header aria-label="IBM Platform Name">
+    <bx-header-menu-button
+            button-label-active="Close menu"
+            button-label-inactive="Open menu"
+    ></bx-header-menu-button>
+    <bx-header-name href="{{ '/' | url }}" prefix="Qiskit">Sample Test Answers</bx-header-name>
+</bx-header>
+
+<bx-side-nav aria-label="Side navigation">
+    <bx-side-nav-items>
+        <bx-side-nav-menu title="Official Sample Questions">
+            {% for page in collections.question %}
+                <bx-side-nav-menu-item href="{{ page.url | url }}">
+                    {{ page.data.title }}
+                </bx-side-nav-menu-item>
+            {%- endfor %}
+        </bx-side-nav-menu>
+        <bx-side-nav-divider></bx-side-nav-divider>
+        <bx-side-nav-link href="https://qiskit.org/">Qiskit</bx-side-nav-link>
+        <bx-side-nav-link href="https://qiskit.org/learn/">Qiskit Textbook</bx-side-nav-link>
+        <bx-side-nav-link href="https://quantum-computing.ibm.com">IBM Quantum</bx-side-nav-link>
+        <bx-side-nav-divider></bx-side-nav-divider>
+        <bx-side-nav-link href="https://github.com/andre-a-alves/qiskit-sample-test-answers">Github Repo</bx-side-nav-link>
+        <bx-side-nav-link href="https://github.com/andre-a-alves/qiskit-sample-test-answers/blob/master/CONTRIBUTING.md">Contribute</bx-side-nav-link>
+    </bx-side-nav-items>
+</bx-side-nav>

@@ -3,11 +3,12 @@ layout: layouts/base.njk
 ---
 {{ content | safe }}
 
-<div class="pure-g">
-    {% set pages = collections.question %}
-    {% for page in pages %}
-        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-5 question-list">
-            <a href="{{ page.url | url }}"> {{ page.data.title }} </a>
-        </div>
-    {%- endfor %}
+<div class="bx--grid">
+    <div class="bx--row">
+            {% for page in collections.question %}
+                <div class="bx--col-sm-2 bx--col-md-2 bx--col-lg-2 bx--col-max-2">
+                    <bx-link href="{{ page.url | url }}"> {{ page.data.title }} </bx-link>
+                </div>
+            {%- endfor %}
+    </div>
 </div>

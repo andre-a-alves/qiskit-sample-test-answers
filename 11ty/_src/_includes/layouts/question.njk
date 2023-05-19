@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+---
+{% set answersContent = collections.pagesWithTags(tags[0], 'answer_options')[0].data.content %}
+{% set explanationContent = collections.pagesWithTags(tags[0], 'explanation')[0].data.content  %}
+{% set referencesContent = collections.pagesWithTags(tags[0], 'references')[0].data.content  %}
+{% set correctAnswerContent = collections.pagesWithTags(tags[0], 'correct_answer')[0].data.content %}
+{% set explanationsPath = collections.pagesWithTags(tags[0], 'breakdown_base')[0].outputPath %}
+
+{{ content | safe }}
+{{ answersContent | safe }}
+
+<bx-accordion>
+    <bx-accordion-item title-text="Question Explanation">
+        {{ explanationContent | safe }}
+    </bx-accordion-item>
+    <bx-accordion-item title-text="References">
+        {{ referencesContent | safe }}
+    </bx-accordion-item>
+    <bx-accordion-item title-text="Correct Answer(s)">
+        {{ correctAnswerContent | safe }}
+    </bx-accordion-item>
+    <bx-accordion-item title-text="Answer Breakdown">
+        {% include explanationsPath %}
+    </bx-accordion-item>
+</bx-accordion>

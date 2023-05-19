@@ -1,0 +1,25 @@
+{{ content | safe }}
+{% set answers = collections.pagesWithTags(tags[0], 'breakdown') %}
+
+{% if answers | length %}
+
+    <bx-tabs trigger-content="Select an item" value="">
+        {% for answer in answers %}
+            <bx-tab id="tab-{{ answer.url | slugify }}" target="panel-{{ answer.url | slugify }}" value="{{ answer.url }}">{{ answer.data.title }}</bx-tab>
+        {% endfor %}
+    </bx-tabs>
+
+    <div class="bx-ce-demo-devenv--tab-panels">
+        {% for answer in answers %}
+            <div id="panel-{{ answer.url | slugify }}" role="tabpanel" aria-labelledby="tab-{{ answer.url | slugify }}" hidden>
+                <div>
+                    <h1> </h1>
+                    {{ answer.data.content | safe }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endif %}
+
+
