@@ -20,7 +20,7 @@ class MdOutputPreprocessor(Preprocessor):
     def preprocess(self, nb, resources):
         processed_cells = []
         for cell in nb["cells"]:
-            if cell["cell_type"] == "code":
+            if cell["cell_type"] == "code" and cell["outputs"]:
                 for output in cell["outputs"]:
                     if "text" in output.keys():
                         next_cell = {
@@ -161,18 +161,18 @@ def main() -> int:
         tags = [base_name, "breakdown_base"]
         title = "Answers Breakdown"
         filename = f"{base_name}-breakdown.md"
+        export_md_file(
+            prepend_tags(
+                title=title,
+                tags=tags,
+                layout="breakdown",
+                md_text=breakdowns[4],
+                base_name=base_name,
+            ),
+            filename,
+        )
         if len(breakdowns) > 4:
-            export_md_file(
-                prepend_tags(
-                    title=title,
-                    tags=tags,
-                    layout="breakdown",
-                    md_text="",
-                    base_name=base_name,
-                ),
-                filename,
-            )
-            first_idx = 3 if len(breakdowns) > 7 else 1
+            first_idx = 5
             for i, part in enumerate(breakdowns[first_idx:]):
                 if i % 2 == 1:
                     continue
@@ -186,17 +186,6 @@ def main() -> int:
                     ),
                     filename,
                 )
-        else:
-            export_md_file(
-                prepend_tags(
-                    title=title,
-                    tags=tags,
-                    layout="breakdown",
-                    md_text=breakdowns[0],
-                    base_name=base_name,
-                ),
-                filename,
-            )
 
     return 0
 
