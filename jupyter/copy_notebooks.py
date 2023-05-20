@@ -166,13 +166,13 @@ def main() -> int:
                 title=title,
                 tags=tags,
                 layout="breakdown",
-                md_text=breakdowns[0],
+                md_text=breakdowns[4],
                 base_name=base_name,
             ),
             filename,
         )
         if len(breakdowns) > 4:
-            first_idx = 3 if len(breakdowns) > 7 else 1
+            first_idx = 5
             for i, part in enumerate(breakdowns[first_idx:]):
                 if i % 2 == 1:
                     continue
