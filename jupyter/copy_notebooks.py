@@ -161,17 +161,17 @@ def main() -> int:
         tags = [base_name, "breakdown_base"]
         title = "Answers Breakdown"
         filename = f"{base_name}-breakdown.md"
+        export_md_file(
+            prepend_tags(
+                title=title,
+                tags=tags,
+                layout="breakdown",
+                md_text=breakdowns[0],
+                base_name=base_name,
+            ),
+            filename,
+        )
         if len(breakdowns) > 4:
-            export_md_file(
-                prepend_tags(
-                    title=title,
-                    tags=tags,
-                    layout="breakdown",
-                    md_text="",
-                    base_name=base_name,
-                ),
-                filename,
-            )
             first_idx = 3 if len(breakdowns) > 7 else 1
             for i, part in enumerate(breakdowns[first_idx:]):
                 if i % 2 == 1:
@@ -186,17 +186,6 @@ def main() -> int:
                     ),
                     filename,
                 )
-        else:
-            export_md_file(
-                prepend_tags(
-                    title=title,
-                    tags=tags,
-                    layout="breakdown",
-                    md_text=breakdowns[0],
-                    base_name=base_name,
-                ),
-                filename,
-            )
 
     return 0
 
