@@ -20,7 +20,7 @@ class MdOutputPreprocessor(Preprocessor):
     def preprocess(self, nb, resources):
         processed_cells = []
         for cell in nb["cells"]:
-            if cell["cell_type"] == "code":
+            if cell["cell_type"] == "code" and cell["outputs"]:
                 for output in cell["outputs"]:
                     if "text" in output.keys():
                         next_cell = {
