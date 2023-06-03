@@ -27,7 +27,8 @@ Therefore, the project can be thought of as being divided between the Python and
 If you wish to contribute to the codebase itself, please follow these steps:
 1. Fork the project to your own GitHub account.
 2. Make the changes in a separate branch in your own fork.
-3. When you are happy with your changes, make a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) from your fork's branch to this repository's main branch. If the PR fixes an open issue, please include the issue number in the PR, for example by writing "Fixes #123."
+3. Add your name to the [AUTHORS](AUTHORS) file. 
+4. When you are happy with your changes, make a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) from your fork's branch to this repository's main branch. If the PR fixes an open issue, please include the issue number in the PR, for example by writing "Fixes #123."
 
 ## Contributing
 As stated earlier, there are three main ways to contribute.
